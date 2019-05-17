@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f69bb-c842-4c3f-bd98-7e7eba7699f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proyecto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blank.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buttons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cards.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cards.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/charts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forgot-password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/utilities-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/utilities-animation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/utilities-border.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/utilities-border.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/utilities-color.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/utilities-color.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/utilities-other.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/utilities-other.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,30 +18,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="589" column="8" lean-forward="true" selection-start-line="589" selection-start-column="8" selection-end-line="589" selection-end-column="8" />
+            <state>
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="120" column="67" selection-start-line="120" selection-start-column="67" selection-end-line="120" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="270">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+          <provider selected="true" editor-type-id="0.CONSOLE">
+            <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="-3.2142856">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,6 +58,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>port</find>
+      <find>href</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -87,8 +80,16 @@
         <option value="$PROJECT_DIR$/templates/blank.html" />
         <option value="$PROJECT_DIR$/templates/buttons.html" />
         <option value="$PROJECT_DIR$/templates/cards.html" />
-        <option value="$PROJECT_DIR$/app.py" />
+        <option value="88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Connection" />
+        <option value="88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/xonfig.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/app/app.py" />
+        <option value="$PROJECT_DIR$/proyecto.py" />
+        <option value="$PROJECT_DIR$/app/routes.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -103,6 +104,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,28 +112,22 @@
               <item name="ProyectoUTEC-DBP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProyectoUTEC-DBP" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ProyectoUTEC-DBP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoUTEC-DBP" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProyectoUTEC-DBP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoUTEC-DBP" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -145,8 +141,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.app (1)">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ProyectoUTEC-DBP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ProyectoUTEC-DBP" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -167,8 +184,75 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ProyectoUTEC-DBP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="proyecto" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ProyectoUTEC-DBP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/proyecto.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="routes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ProyectoUTEC-DBP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/routes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app (1)" />
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.routes" />
+        <item itemvalue="Python.proyecto" />
         <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
@@ -177,27 +261,33 @@
     <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <frame x="-1" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20095314" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20174742" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Educational.CheckDetails" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" />
+      <window_info id="DB Browser" order="2" weight="0.32962668" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45862553" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27068722" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="bottom" id="DB Execution Console" order="12" weight="0.32930514" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modificaciones Base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificaciones Base" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask/app.py">
@@ -305,24 +395,167 @@
         </state>
       </provider>
     </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Connection" />
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="39" selection-start="149" selection-end="149" vertical-scroll-proportion="0.22022839">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="-3.2142856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="0.26946107">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="-3.2142856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="0.26946107">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="-3.2142856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="0.26946107">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="-3.2142856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
+        <state relative-caret-position="304">
           <caret line="120" column="67" selection-start-line="120" selection-start-column="67" selection-end-line="120" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="21" column="20" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Inicial Test">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="0" selection-start="116" selection-end="116" vertical-scroll-proportion="-1.7857143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="0.19313304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://88ea78c5-00e3-4da7-886e-72703ef8be0e/consoles/Tabajo Grupal TEST">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="5" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="-3.2142856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyecto.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="589" column="8" lean-forward="true" selection-start-line="589" selection-start-column="8" selection-end-line="589" selection-end-column="8" />
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
