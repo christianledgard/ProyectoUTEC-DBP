@@ -23,139 +23,18 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="88ea78c5-00e3-4da7-886e-72703ef8be0e">
-        <schema name="main" object-types="column, table, view" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="88ea78c5-00e3-4da7-886e-72703ef8be0e">
-      <console name="Inicial Test" type="STANDARD" schema="main" session="Main">create table usuario(
-    usuario_id integer primary key,
-    codigo text not null ,
-    password text not null 
-);
-
-
-select * from usuario;
-
-
-insert into usuario values (1, 'christian.ledgard@utec.edu.pe', '123');
-insert into usuario values (2, 'carlos.reategui@utec.edu.pe', '321');
-
-
-
-update usuario
-    set password = '201902'
-where usuario_id = 1;
-
-
-delete from usuario
-where usuario_id = 2;
-
-
-create table curso(
-    curso_id integer primary key,
-    nombre text not null ,
-    codigo text not null,
-    creditos integer not null
-);
-
-create table carrera(
-    carrera_id integer primary key,
-    codigo text not null ,
-    nombre text not null,
-    cantidadDeCursos integer not null
-);
-
-insert into curso values (1, 'Desarollo Basado en Plataformas', 'CS2B01', 2);
-insert into curso values (2, 'POO I', 'CS1102', 4);
-insert into curso values (3, 'BD I', 'CS2701', 4);
-insert into curso values (4, 'Algoritmos y Estructuras de Datos', 'CS2100', 4);
-insert into curso values (5, 'Ingeniería de Software I', 'CS2901', 4);
-
-insert into carrera values (1, 'CS', 'Ciencias de la Computación', 50)
-insert into carrera values (2, 'MEC', 'Ingeniería Mecatrónica', 5)
-insert into carrera values (3, 'IND', 'Ingeniería Industrial', 2)
-
-
-update carrera
-    set cantidadDeCursos = 45
-where carrera_id = 2;
-
-update carrera
-    set nombre = 'Ciencia de la Computación'
-where carrera_id = 1;
-
-update carrera
-    set cantidadDeCursos = 48
-where carrera_id = 3;
-
-delete from curso
-where curso_id = 5
-
-update carrera
-    set cantidadDeCursos = 68
-where carrera_id = 1;
-
-select* from curso;
-select* from carrera;</console>
-      <console name="Tabajo Grupal TEST" type="STANDARD" schema="main" session="Main">create table equipo(
-    equipo_id integer primary key,
-    nombre text not null ,
-    ciudad text not null,
-    numeroDeJugadores integer not null,
-    valorEnDolares numeric
-);
-
-create table juagdor(
-    juagdor_id integer primary key,
-    nombre text not null,
-    apellido text not null,
-    ciudadDeResidencia text not null,
-    cuidadDeNacimieto text,
-    celular text,
-    valorEnDolares numeric,
-    mayorCantidadDeGolesEnUnPartido integer
-);
-
-create table estadio(
-    estadio_id integer primary key,
-    nombre text not null,
-    ciudad text not null, 
-    equipoTitular text,
-    capacidadMaxima integer
-);
-
-
-create table liga(
-    liga_id integer primary key,
-    nombre text not null,
-    paisDeOrigen text not null ,
-    nivelInternacinal integer not null
-);
-
-create table ranking(
-    ranking_id integer primary key,
-    puesto numeric not null,
-    nombreJugador text not null,
-    categoria text
-);
-
-create table entrenador(
-    ranking_id integer primary key,
-    nombre text not null,
-    apellido text not null,
-    equipoQueEntrena text
-);</console>
+    <connection id="8973309b-8802-4622-9ffa-fc9a008c681c">
+      <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="88ea78c5-00e3-4da7-886e-72703ef8be0e" />
+    <connection id="8973309b-8802-4622-9ffa-fc9a008c681c" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -180,7 +59,7 @@ create table entrenador(
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="88ea78c5-00e3-4da7-886e-72703ef8be0e" active="true">
+      <connection id="8973309b-8802-4622-9ffa-fc9a008c681c" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -195,7 +74,7 @@ create table entrenador(
           <port value="" />
           <database value="" />
           <files>
-            <file path="$USER_HOME$/DataBase/BD.db" schema="main" />
+            <file path="$PROJECT_DIR$/web/DB.db" schema="main" />
           </files>
           <os-authentication value="false" />
           <empty-authentication value="false" />
