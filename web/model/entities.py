@@ -3,14 +3,12 @@ from sqlalchemy.orm import relationship
 from database import connector
 
 class Users(connector.Manager.Base):
-    __tablename__ = 'users'
+    __tablename__ = 'Users'
     id = Column(Integer, Sequence('users_id_seq'), primary_key=True)
-    name = Column(String(50))
-    lastNamePaterno = Column(String(50))
-    lastNameMaterno = Column(String(50))
-    email = Column(String(50))
-    club = Column(String(25))
-    sailNumber = Column(String(15))
+    firstName = Column(String(50))
+    lastName = Column(String(50))
+    password = Column(String(80))
+    email = Column(String(50), unique= True)
 
 
 """

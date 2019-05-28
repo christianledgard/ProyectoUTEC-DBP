@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% block content %}
 <html lang="en">
 
 <head>
@@ -35,25 +36,27 @@
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
               <form class="user">
+                {{ form.hidden_tag() }}
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                    {{ form.firstName.label(class="sr-only") }}
+                    {{ form.firstName(size=32, class="form-control form-control-user", placeholder="First Name") }}
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+                    {{ form.lastName.label(class="sr-only") }}
+                    {{ form.lastName(size=32, class="form-control form-control-user", placeholder="Last Name") }}
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                  {{ form.email.label(class="sr-only") }}
+                  {{ form.email(size=80, class="form-control form-control-user", placeholder="Email Address") }}
                 </div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
-                  </div>
+                <div class="form-group">
+                  {{ form.password.label(class="sr-only") }}
+                  {{ form.password(size=80, class="form-control form-control-user", placeholder="Password") }}
+
                 </div>
+                {{ form.submit(class="btn btn-primary btn-user btn-block") }}
                 <a href="login.html" class="btn btn-primary btn-user btn-block">
                   Register Account
                 </a>
@@ -93,3 +96,4 @@
 </body>
 
 </html>
+{% endblock %}
