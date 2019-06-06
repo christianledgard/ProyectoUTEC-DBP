@@ -7,7 +7,6 @@ from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
 
 from database import connector
-from forms import LoginForm, RegisterForm
 from model import entities
 import json
 
@@ -18,16 +17,103 @@ app = Flask(__name__)
 
 
 @app.route('/')
-
 def main():
     return render_template('index.html')
+
+@app.route('/static/<content>')
+def static_content(content):
+    return render_template(content)
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - - - - - L O G I N - - - - - - - - - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
 
-@app.route("/login", methods=['GET', 'POST'])
+@app.route("/login")
 def login():
+    return render_template('login.html')
+
+@app.route('/authenticate', methods = ["POST"])
+def authenticate():
+    message = json.loads(request.data)
+    email = message['email']
+    password = message['password']
+    #2. look in database
+    db_session = db.getSession(engine)
+    try:
+        user = db_session.query(entities.Users
+            ).filter(entities.Users.email == email
+            ).filter(entities.Users.password == password
+            ).one()
+        message = {'message': 'Authorized'}
+        return Response(message, status=200, mimetype='application/json')
+    except Exception:
+        message = {'message': 'Unauthorized'}
+        return Response(message, status=401, mimetype='application/json')
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - -  C R E A T E - U S E R - - - - -  - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+
+
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - - -  C R U D - U S E R S  - - - - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+
+@app.route('/users', methods = ['GET'])
+def get_users():
+    session = db.getSession(engine)
+    dbResponse = session.query(entities.Users)
+    data = []
+    for user in dbResponse:
+        data.append(user)
+    return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+@app.route('/users', methods = ['POST'])
+def post_users():
+    c =  json.loads(request.form['values'])
+    user = entities.Users(
+        firstName =c['firstName'],
+        lastName =c['lastName'],
+        password =c['password'],
+        email =c['email']
+    )
+    session = db.getSession(engine)
+    session.add(user)
+    session.commit()
+    return 'Created User'
+
+@app.route('/users', methods = ['PUT'])
+def update_users():
+    session = db.getSession(engine)
+    id = request.form['key']
+    user = session.query(entities.Users).filter(entities.Users.id == id).first()
+    c =  json.loads(request.form['values'])
+    for key in c.keys():
+        setattr(user, key, c[key])
+    session.add(user)
+    session.commit()
+    return 'Updated User'
+
+@app.route('/users', methods = ['DELETE'])
+def delete_user():
+    id = request.form['key']
+    session = db.getSession(engine)
+    messages = session.query(entities.Users).filter(entities.Users.id == id)
+    for message in messages:
+        session.delete(message)
+    session.commit()
+    return "User Deleted"\
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - - -  O L D - M E T H O D  - - - - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+
+@app.route("/loginold", methods=['GET', 'POST'])
+def loginold():
     form = LoginForm()
     if form.validate_on_submit():
         user = Users.query.filter_by(email=form.username.data).first()

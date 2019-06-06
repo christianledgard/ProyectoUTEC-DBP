@@ -8,7 +8,7 @@ class Users(connector.Manager.Base):
     firstName = Column(String(50))
     lastName = Column(String(50))
     password = Column(String(80))
-    email = Column(String(50), unique= True)
+    email = Column(String(50), unique=True)
 
 
 """
