@@ -33,9 +33,9 @@
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                <h1 class="h4 text-gray-900 mb-4">Create una Cuenta!</h1>
               </div>
-              <form class="user">
+              <div class="user">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input class="form-control form-control-user" size=32 type="text" name="firstName" id="firstName" placeholder="Nombre" >
@@ -50,9 +50,9 @@
                 <div class="form-group">
                   <input class="form-control form-control-user" size=32 type="password" name="password" id="password" placeholder="Contraseña">
                 </div>
-                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                <button class="btn btn-primary btn-user btn-block" value="login" onclick="sentData()">
                   Register Account
-                </a>
+                </button>
                 <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google
@@ -60,7 +60,7 @@
                 <a href="index.html" class="btn btn-facebook btn-user btn-block">
                   <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                 </a>
-              </form>
+              </div>
               <hr>
               <div class="text-center">
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
@@ -79,7 +79,7 @@
 
     	<script>
 
-		function getData(){
+		function sentData(){
         var firstName = $('#firstName').val();
         var lastName = $('#lastName').val();
         var email = $('#email').val();
@@ -90,9 +90,8 @@
                 "firstName":firstName,
                 "lastName":lastName
             });
-
         $.ajax({
-            url:'/authenticate',
+            url:'/createUser',
             type:'POST',
             contentType: 'application/json',
             data : message,
@@ -101,15 +100,11 @@
                 alert(JSON.stringify(response));
             },
             error: function(response){
-              alert(JSON.stringify(response));
               if(response["status"]==401){
-					$('#correctPassoword').hide()
-                    $('#wrongPassoword').show()
-                    //alert(JSON.stringify(response));
+                    alert(JSON.stringify("FAIL :("));
 				}else{
-                    $('#wrongPassoword').hide()
-                    $('#correctPassoword').show()
-					//alert(JSON.stringify(response));
+                    alert(JSON.stringify("OK :)"));
+                    window.location.href = "http://0.0.0.0:8020";
 				}
             }
         });

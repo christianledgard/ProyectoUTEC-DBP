@@ -98,7 +98,7 @@
 
   </div>
 
-<!-- OJO, SCRIPT NO TERMINADO
+
   	<script>
 
 		function getData(){
@@ -121,12 +121,13 @@
             error: function(response){
               alert(JSON.stringify(response));
               if(response["status"]==401){
-					$('#correctPassoword').hide()
-                    $('#wrongPassoword').show()
+					$('#correctPassoword').hide();
+                    $('#wrongPassoword').show();
                     //alert(JSON.stringify(response));
 				}else{
-                    $('#wrongPassoword').hide()
-                    $('#correctPassoword').show()
+                    $('#wrongPassoword').hide();
+                    $('#correctPassoword').show();
+                    window.location.href = "http://0.0.0.0:8020";
 					//alert(JSON.stringify(response));
 				}
             }
@@ -134,7 +135,7 @@
     }
 
 
-	</script>-->
+	</script>
 
 
   <!-- Bootstrap core JavaScript-->

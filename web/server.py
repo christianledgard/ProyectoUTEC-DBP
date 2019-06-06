@@ -1,5 +1,5 @@
 from flask import Flask,render_template, request, session, Response, redirect, url_for
-from flask_login import login_manager, UserMixin, login_user, login_required, logout_user, current_user
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
 from wtforms import TextField, BooleanField, PasswordField, TextAreaField, validators
@@ -14,6 +14,9 @@ db = connector.Manager()
 engine = db.createEngine()
 
 app = Flask(__name__)
+
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 
 @app.route('/')
@@ -40,12 +43,13 @@ def authenticate():
     #2. look in database
     db_session = db.getSession(engine)
     try:
-        user = db_session.query(entities.Users
-            ).filter(entities.Users.email == email
-            ).filter(entities.Users.password == password
-            ).one()
-        message = {'message': 'Authorized'}
-        return Response(message, status=200, mimetype='application/json')
+        user = db_session.query(entities.Users).filter(entities.Users.email == email).one()
+        if check_password_hash(user.password, password):
+            message = {'message': 'Authorized'}
+            return Response(message, status=200, mimetype='application/json')
+        else:
+            message = {'message': 'Unauthorized'}
+            return Response(message, status=401, mimetype='application/json')
     except Exception:
         message = {'message': 'Unauthorized'}
         return Response(message, status=401, mimetype='application/json')
@@ -55,8 +59,25 @@ def authenticate():
 # - - - - -  C R E A T E - U S E R - - - - -  - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
 
-
-
+@app.route('/createUser', methods = ["POST"])
+def createUser():
+    message = json.loads(request.data)
+    try:
+        hashed_password = generate_password_hash(message['password'], method='sha256')
+        user = entities.Users(
+        firstName=message['firstName'],
+        lastName=message['lastName'],
+        password=hashed_password,
+        email=message['email']
+        )
+        session = db.getSession(engine)
+        session.add(user)
+        session.commit()
+        message = {'message': 'User Created'}
+        return Response(message, status=200, mimetype='application/json')
+    except Exception:
+        message = {'message': 'Error'}
+        return Response(message, status=401, mimetype='application/json')
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - -  C R U D - U S E R S  - - - - - - #
@@ -74,10 +95,11 @@ def get_users():
 @app.route('/users', methods = ['POST'])
 def post_users():
     c =  json.loads(request.form['values'])
+    hashed_password = generate_password_hash(c['password'], method='sha256')
     user = entities.Users(
         firstName =c['firstName'],
         lastName =c['lastName'],
-        password =c['password'],
+        password = hashed_password,
         email =c['email']
     )
     session = db.getSession(engine)
