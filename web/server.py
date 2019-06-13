@@ -14,14 +14,6 @@ import json
 db = connector.Manager()
 engine = db.createEngine()
 app = Flask(__name__)
-login_manager = LoginManager()
-login_manager.init_app(app)
-
-#CHECK LOGIN
-@login_manager.user_loader
-def load_user(user_id):
-    db_session = db.getSession(engine)
-
 
 
 @app.route('/')
@@ -281,19 +273,19 @@ def update_sailing():
 def delete_sailing():
     id = request.form['key']
     session = db.getSession(engine)
-    inscription = session.query(entities.InscriptionSailing).filter(entities.InscriptionSailing.id == id)
+    inscriptions = session.query(entities.InscriptionSailing).filter(entities.InscriptionSailing.id == id)
     for inscription in inscriptions:
         session.delete(inscription)
     session.commit()
-    return "Sailing Inscription Deleted"
+    return "Deleted Sailing Inscription"
 
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - - C R U D - S O C C E R - - - - - - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
+
 #create soccer
-"""
 @app.route('/soccer', methods = ['POST'])
 def post_soccer():
     j = json.loads(request.form['values'])
@@ -309,7 +301,7 @@ def post_soccer():
     return 'Created Soccer Inscription'
 
 #read soccer
-@app.route('/soccer', methos = ['GET'])
+@app.route('/soccer', methods = ['GET'])
 def get_soccer():
     session = db.getSession(engine)
     dbResponse = session.query(entities.InscriptionSoccer)
@@ -336,18 +328,18 @@ def update_soccer():
 def delete_soccer():
     id = request.form['key']
     session = db.getSession(engine)
-    inscription = session.query(entities.InscriptionSoccer).filter(entities.InscriptionSoccer.id == id)
+    inscriptions = session.query(entities.InscriptionSoccer).filter(entities.InscriptionSoccer.id == id)
     for inscription in inscriptions:
         session.delete(inscription)
     session.commit()
-    return "Soccer Inscription Deleted"
-"""
+    return "Deleted Soccer Inscription"
+
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - N O T I F I C A T I O N S - - - - - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
 #create notification
 @app.route('/notifications', methods = ['POST'])
-def post_notifications():
+def post_notification():
     c =  json.loads(request.form['values'])
     notification = entities.Notification(
         date=c['date'],
@@ -355,43 +347,43 @@ def post_notifications():
         type=c['type']
     )
     session = db.getSession(engine)
-    session.add(inscription)
+    session.add(notification)
     session.commit()
-    return 'Created Sailing Inscription'
+    return 'Created Notification'
 
 #read notification
-@app.route('/sailing', methods = ['GET'])
-def get_sailing():
+@app.route('/notifications', methods = ['GET'])
+def get_notification():
     session = db.getSession(engine)
-    dbResponse = session.query(entities.InscriptionSailing)
+    dbResponse = session.query(entities.Notification)
     data = []
-    for inscription in dbResponse:
-        data.append(inscription)
+    for notification in dbResponse:
+        data.append(notification)
     return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
 
 #update notification
-@app.route('/sailing', methods = ['PUT'])
-def update_sailing():
+@app.route('/notifications', methods = ['PUT'])
+def update_notification():
     session = db.getSession(engine)
     id = request.form['key']
-    inscription = session.query(entities.InscriptionSailing).filter(entities.InscriptionSailing.id == id).first()
+    notification = session.query(entities.Notification).filter(entities.Notification.id == id).first()
     c = json.loads(request.form['values'])
     for key in c.keys():
-        setattr(inscription, key, c[key])
-    session.add(inscription)
+        setattr(notification, key, c[key])
+    session.add(notification)
     session.commit()
-    return 'Updated Sailing Inscription'
+    return 'Updated Notification'
 
 #delete notification
-@app.route('/sailing', methods = ['DELETE'])
-def delete_sailing():
+@app.route('/notifications', methods = ['DELETE'])
+def delete_notification():
     id = request.form['key']
     session = db.getSession(engine)
-    inscription = session.query(entities.InscriptionSailing).filter(entities.InscriptionSailing.id == id)
-    for inscription in inscriptions:
-        session.delete(inscription)
+    notifications = session.query(entities.Notification).filter(entities.Notification.id == id)
+    for notification in notifications:
+        session.delete(notification)
     session.commit()
-    return "Sailing Inscription Deleted"
+    return "Deleted Notification"
 
 
 @app.route("/inscripcion")

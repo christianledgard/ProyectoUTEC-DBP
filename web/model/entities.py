@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Sequence, DateTime, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
 from database import connector
+from datetime import datetime
 
 class Users(connector.Manager.Base):
     __tablename__ = 'Users'
@@ -42,10 +43,10 @@ class InscriptionSoccer(connector.Manager.Base):
 class Notification(connector.Manager.Base):
     __tablename__ = 'Notifications'
     id = Column(Integer, Sequence('notifications_id_seq'), primary_key=True)
-    date = Column(DateTime())
+    date = Column(default=datetime.now())
     text = Column(String(200))
     type = Column(String(30))
-    
+
 
 """
 class EmergencyContact(connector.Manager.Base):
