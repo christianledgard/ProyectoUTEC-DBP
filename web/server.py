@@ -42,6 +42,7 @@ def authenticate():
     db_session = db.getSession(engine)
     try:
         user = db_session.query(entities.Users).filter(entities.Users.email == email).one()
+        session['logged_user']=user.id
         if check_password_hash(user.password, password):
             message = {'message': 'Authorized'}
             return Response(message, status=200, mimetype='application/json')
@@ -51,6 +52,16 @@ def authenticate():
     except Exception:
         message = {'message': 'Unauthorized'}
         return Response(message, status=401, mimetype='application/json')
+
+#current
+@app.route('/current', methods = ['GET'])
+def current_user():
+    db_session = db.getSession(engine)
+    user = db_session.query(entities.Users).filter(
+        entities.Users.id==session['logged_user']).first()
+    return Response(json.dumps(user,
+                               cls=connector.AlchemyEncoder),
+                    mimetype='application/json')
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - - - - - L O G O U T - - - - - - - - #
@@ -389,6 +400,8 @@ def delete_notification():
 @app.route("/inscripcion")
 def inscripcion():
     return render_template('form1.html')
+
+
 
 
 
