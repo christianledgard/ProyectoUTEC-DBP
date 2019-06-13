@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="984f69bb-c842-4c3f-bd98-7e7eba7699f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/web/DB.db" beforeDir="false" afterPath="$PROJECT_DIR$/web/DB.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/index.js" afterDir="false" />
     </list>
@@ -18,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="207" column="25" lean-forward="true" selection-start-line="207" selection-start-column="12" selection-end-line="207" selection-end-column="25" />
+            <state relative-caret-position="350">
+              <caret line="84" column="38" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="38" />
               <folding>
                 <element signature="e#0#86#0" expanded="true" />
               </folding>
@@ -30,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="221">
+              <caret line="387" column="39" selection-start-line="387" selection-start-column="34" selection-end-line="387" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -43,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/templates/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-337">
-              <caret column="20" lean-forward="true" selection-start-column="9" selection-end-column="20" />
+            <state relative-caret-position="337">
+              <caret line="62" column="2" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -52,20 +51,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/model/entities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="438">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
               <folding>
                 <element signature="e#0#87#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/templates/crud_users.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -81,11 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>port</find>
-      <find>href</find>
-      <find>Card</find>
-      <find>sear</find>
-      <find>md-4</find>
       <find>split Buttons</find>
       <find>ali</find>
       <find>numero</find>
@@ -107,6 +92,15 @@
       <find>inscriptions</find>
       <find>current</find>
       <find>container</find>
+      <find>showInsc</find>
+      <find>2400</find>
+      <find>json</find>
+      <find>json.load</find>
+      <find>json.loads</find>
+      <find>json.loads(request.d</find>
+      <find>inscripc</find>
+      <find>ok_</find>
+      <find>div</find>
     </findStrings>
     <replaceStrings>
       <replace>md-12</replace>
@@ -162,10 +156,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="20" />
-    <option name="y" value="504" />
-    <option name="width" value="812" />
-    <option name="height" value="447" />
+    <option name="x" value="847" />
+    <option name="y" value="42" />
+    <option name="width" value="813" />
+    <option name="height" value="909" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -390,10 +384,10 @@
     <option name="totallyTimeSpent" value="30790000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="42" width="812" height="909" extended-state="0" />
+    <frame x="847" y="42" width="813" height="909" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21491782" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21464646" />
       <window_info id="Structure" order="1" weight="0.24959612" />
       <window_info id="DB Browser" order="2" weight="0.32956383" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -419,23 +413,23 @@
       <window_info anchor="right" id="SciView" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20840065" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="DB Browser" order="2" weight="0.32962668" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10500309" />
+      <window_info id="Structure" order="1" weight="0.24959612" />
+      <window_info id="DB Browser" order="2" weight="0.32956383" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4988086" visible="true" weight="0.4944356" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4988086" visible="true" weight="0.17988166" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32898173" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960285" weight="0.32959327" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960285" weight="0.32898173" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.32678822" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.49960285" weight="0.32959327" />
-      <window_info anchor="bottom" id="DB Execution Console" order="12" weight="0.32819074" />
+      <window_info anchor="bottom" id="DB Execution Console" order="12" weight="0.32810047" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -519,13 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="106" column="65" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="db://d1598cd6-02ae-4a99-96a2-757374a0cbba/consoles/Connection" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -570,16 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="207" column="25" lean-forward="true" selection-start-line="207" selection-start-column="12" selection-end-line="207" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/crud_users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -587,10 +564,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="91" column="15" lean-forward="true" selection-start-line="82" selection-start-column="8" selection-end-line="91" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="84" column="38" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/model/entities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="438">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding>
             <element signature="e#0#87#0" expanded="true" />
           </folding>
@@ -599,8 +593,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="221">
+          <caret line="387" column="39" selection-start-line="387" selection-start-column="34" selection-end-line="387" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -610,8 +604,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-337">
-          <caret column="20" lean-forward="true" selection-start-column="9" selection-end-column="20" />
+        <state relative-caret-position="337">
+          <caret line="62" column="2" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="2" />
         </state>
       </provider>
     </entry>

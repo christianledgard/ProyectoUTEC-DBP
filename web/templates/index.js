@@ -30,7 +30,7 @@ function refreshPage(){
                     a=a+'<span class="icon text-white-50">';
                     a=a+'<i class="fas fa-check"></i>';
                     a=a+'</span>';
-                    a=a+'<button class="text" onclick="showInscriptionDiv()">Inscribete Aquí</button>';
+                    a=a+'<button class="text" onclick="showInscriptionDiv('+response[i].id+')">Inscribete Aquí</button>';
                     a=a+'</div></div></div></div></div></div>';
                     $('#posts').append(a);
                 });
@@ -38,22 +38,80 @@ function refreshPage(){
         });
 }
 
-function showInscriptionDiv(){
+function showInscriptionDiv(idChampionship){
   $('#principal_page').hide();
+
+  $("#firstCondition").html("Número de Vela");
+  $("#secondCondition").html("Tipo de vela");
+  $('#send_button').attr('onclick', 'sailingLoadData('+idChampionship+')');
+  $('#insOK').attr('onclick', 'sailingLoadData('+idChampionship+')');
+
+  //meterle un if para saber si es vela o fut
+
+  //$("#firstCondition").html("Peso en kg");
+  //$("#secondCondition").html("Equipo");
+  //$('#insOK').attr('onclick', 'soccerLoadData('+idChampionship+')');
+
   $('#inscriptions').show();
+
+  $("#titleInscription").html("Inscripción al Campeonato N"+idChampionship);
 }
 
-function inscription(){
+//<select id="secondInput" name="secondInput" class="form-control" >
+//<option value="">-Seleccionar-</option>
+//<option value="1">4.7</option>
+//<option value="2">Radial</option>
+//<option value="3">Standard</option>
+
+
+
+
+
+function sailingLoadData(idChampionship){
+    $.ajax({
+            url:'/current',
+            type:'GET',
+            contentType: 'application/json',
+            dataType:'json',
+            success: function(response){
+                idUser = response['id']
+            }
+        });
+    var firstCondition = $('#firstCondition').val();
+    var secondCondition = $("#secondCondition").val();
+    var message = JSON.stringify({
+                "sailingNumber": firstCondition,
+                "category": secondCondition,
+                "user_id": idUser,
+                "championship_id": idChampionship
+            });
+            //falta añadir el load con ajax e implementar en server con json.loads(request.data)
 
 }
 
+function soccerLoadData(idChampionship){
+    $.ajax({
+            url:'/current',
+            type:'GET',
+            contentType: 'application/json',
+            dataType:'json',
+            success: function(response){
+                idUser = response['id']
+            }
+        });
+    var firstCondition = $('#firstCondition').val();
+    var secondCondition = $("#secondCondition").val();
+    var message = JSON.stringify({
+                "category": firstCondition,
+                "soccerTeam": secondCondition,
+                "user_id": idUser,
+                "championship_id": idChampionship
+            });
+            //falta añadir el load con ajax e implementar en server con json.loads(request.data)
+}
 
 
 function cancel_inscription(){
   $('#inscriptions').hide();
   $('#principal_page').show();
-}
-
-function ok_inscription(){
-
 }
