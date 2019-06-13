@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -244,9 +244,8 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -270,8 +269,8 @@
         </nav>
         <!-- End of Topbar -->
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <!-- Begin Page Content PRINCIPAL PAGE -->
+        <div class="container-fluid" id="principal_page">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -303,12 +302,12 @@
                   </div>
                   <br>
                   <div class="text-right">
-                    <a href="{{url_for('inscripcion') }}" class="btn btn-primary btn-icon-split">
+                    <div class="btn btn-primary btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fas fa-check"></i>
                     </span>
-                    <span class="text">Inscribete Aquí</span>
-                  </a>
+                      <button class="text" onclick="showInscriptionDiv()">Inscribete Aquí</button>
+                  </div>
                 </div>
               </div>
 
@@ -318,9 +317,86 @@
 
         </div>
         <!-- /.container-fluid -->
-
-      </div>
       <!-- End of Main Content -->
+
+
+      <!-- Begin Page Content INSCRIPTIONS-->
+        <div class="container-fluid" id="inscriptions" style="display:none">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Inscripciones</h1>
+            <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div>
+              <form class="form-horizontal">
+                <div class="card shadow mb-4">
+                <div class="card-header py-3 ">
+                  <h6 class="m-0 font-weight-bold text-primary">Inscripción al Campeonato #####</h6>
+                </div>
+                <div class="card-body">
+                  <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="numeroVela"><b>Número de Vela</b></label>
+                    <div class="col-md-4">
+                    <input id="numeroVela" name="numeroVela" type="text" placeholder="240000" class="form-control input-md" required="">
+
+                    </div>
+                  </div>
+
+                  <!-- Select Basic -->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="vela"><b>Vela</b></label>
+                    <div class="col-md-4">
+                      <select id="vela" name="vela" class="form-control" required="">
+                        <option value="">-Seleccionar-</option>
+                        <option value="1">4.7</option>
+                        <option value="2">Radial</option>
+                        <option value="3">Standard</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Multiple Checkboxes (inline) -->
+                  <div class="form-group">
+                    <label class="col-md-12 control-label" for="TerminosyCondiciones"><b>Términos y Condiciones</b></label>
+                    <div class="col-md-12">
+                      <label class="checkbox-inline" for="TerminosyCondiciones-0">
+                        <input type="checkbox" name="TerminosyCondiciones" id="TerminosyCondiciones-0" value="1">
+                        Acepto los términos y condiciones expresados en el Aviso e Instrucción de Regata.
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Button (Double) -->
+                  <div class="form-group" align="right">
+                    <label class="col-md-4 control-label" for="insOK"></label>
+                    <div class="col-md-8">
+                      <button id="insOK" name="insOK" class="btn btn-success" onclick="ok_inscription">Realizar la Inscripción</button>
+                      <button id="insCANCELAR" name="insCANCELAR" class="btn btn-danger" onclick="cancel_inscription">Cancelar</button>
+                    </div>
+                  </div>
+
+                  </fieldset>
+
+              </form>
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">

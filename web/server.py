@@ -10,18 +10,24 @@ from database import connector
 from model import entities
 import json
 
+
 db = connector.Manager()
 engine = db.createEngine()
-
 app = Flask(__name__)
-
 login_manager = LoginManager()
 login_manager.init_app(app)
+
+#CHECK LOGIN
+@login_manager.user_loader
+def load_user(user_id):
+    db_session = db.getSession(engine)
+
 
 
 @app.route('/')
 def main():
     return render_template('index.html')
+
 
 @app.route('/static/<content>')
 def static_content(content):
@@ -54,10 +60,22 @@ def authenticate():
         message = {'message': 'Unauthorized'}
         return Response(message, status=401, mimetype='application/json')
 
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - - - - - - L O G O U T - - - - - - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+
+@app.route('/logout', methods = ['GET'])
+def logout():
+    session.clear()
+    return render_template('index.html')
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - -  C R E A T E - U S E R - - - - -  - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
+
+@app.route("/register")
+def register():
+    return render_template('register.html')
 
 @app.route('/createUser', methods = ["POST"])
 def createUser():
@@ -148,6 +166,7 @@ def loginold():
     return render_template('login.html', form=form)
 
 
+"""
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
@@ -161,6 +180,218 @@ def register():
         return '<h1>New user has been created!</h1>'
         #return '<h1>' + form.username.data + ' ' + form.email.data + ' ' + form.password.data + '</h1>'
     return render_template('register.html', form=form)
+
+"""
+
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - C R U D - C H A M P I O N S H I P - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+
+#create championship
+@app.route('/championship', methods = ['POST'])
+def post_championship():
+    c =  json.loads(request.form['values'])
+    championship = entities.Championship(
+        title =c['title'],
+        maxCompetitors =c['maxCompetitors'],
+        location =c['location']
+    )
+    session = db.getSession(engine)
+    session.add(championship)
+    session.commit()
+    return 'Created Championship'
+
+#read championship
+@app.route('/championship', methods = ['GET'])
+def get_championship():
+    session = db.getSession(engine)
+    dbResponse = session.query(entities.Championship)
+    data = []
+    for championship in dbResponse:
+        data.append(championship)
+    return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+#update championship
+@app.route('/championship', methods = ['PUT'])
+def update_championship():
+    session = db.getSession(engine)
+    id = request.form['key']
+    championship = session.query(entities.Championship).filter(entities.Championship.id == id).first()
+    c = json.loads(request.form['values'])
+    for key in c.keys():
+        setattr(championship, key, c[key])
+    session.add(championship)
+    session.commit()
+    return 'Updated Championship'
+
+#delete championship
+@app.route('/championship', methods = ['DELETE'])
+def delete_championship():
+    id = request.form['key']
+    session = db.getSession(engine)
+    championships = session.query(entities.Championship).filter(entities.Championship.id == id)
+    for championship in championships:
+        session.delete(championship)
+    session.commit()
+    return "User Deleted"
+
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - - - C R U D - S A I L I N G - - - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+#create sailing
+@app.route('/sailing', methods = ['POST'])
+def post_sailing():
+    c =  json.loads(request.form['values'])
+    inscription = entities.InscriptionSailing(
+        sailingNumber=c['sailingNumber'],
+        category=c['category'],
+        user_id=c['user_id'],
+        championship_id=c['championship_id']
+    )
+    session = db.getSession(engine)
+    session.add(inscription)
+    session.commit()
+    return 'Created Sailing Inscription'
+
+#read sailing
+@app.route('/sailing', methods = ['GET'])
+def get_sailing():
+    session = db.getSession(engine)
+    dbResponse = session.query(entities.InscriptionSailing)
+    data = []
+    for inscription in dbResponse:
+        data.append(inscription)
+    return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+#update sailing
+@app.route('/sailing', methods = ['PUT'])
+def update_sailing():
+    session = db.getSession(engine)
+    id = request.form['key']
+    inscription = session.query(entities.InscriptionSailing).filter(entities.InscriptionSailing.id == id).first()
+    c = json.loads(request.form['values'])
+    for key in c.keys():
+        setattr(inscription, key, c[key])
+    session.add(inscription)
+    session.commit()
+    return 'Updated Sailing Inscription'
+
+#delete sailing
+@app.route('/sailing', methods = ['DELETE'])
+def delete_sailing():
+    id = request.form['key']
+    session = db.getSession(engine)
+    inscription = session.query(entities.InscriptionSailing).filter(entities.InscriptionSailing.id == id)
+    for inscription in inscriptions:
+        session.delete(inscription)
+    session.commit()
+    return "Sailing Inscription Deleted"
+
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - - - C R U D - S O C C E R - - - - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+#create soccer
+"""
+@app.route('/soccer', methods = ['POST'])
+def post_soccer():
+    j = json.loads(request.form['values'])
+    inscripcion = entities.InscriptionSoccer(
+        soccerTeam=j['soccerTeam'],
+        category=j['category'],
+        user_id=j['user_id'],
+        championship_id=j['championship_id']
+        )
+    session = db.getSession(engine)
+    session.add(inscription)
+    session.commit()
+    return 'Created Soccer Inscription'
+
+#read soccer
+@app.route('/soccer', methos = ['GET'])
+def get_soccer():
+    session = db.getSession(engine)
+    dbResponse = session.query(entities.InscriptionSoccer)
+    data = []
+    for inscription in dbResponse:
+        data.append(inscription)
+    return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+#update soccer
+@app.route('/soccer', methods = ['PUT'])
+def update_soccer():
+    session = db.getSession(engine)
+    id = request.form['key']
+    inscription = session.query(entities.InscriptionSoccer).filter(entities.InscriptionSoccer.id == id).first()
+    j = json.loads(request.form['values'])
+    for key in j.keys():
+        setattr(inscription, key, j[key])
+    session.add(inscription)
+    session.commit()
+    return 'Updated Soccer Inscription'
+
+#delete soccer
+@app.route('/soccer', methods = ['DELETE'])
+def delete_soccer():
+    id = request.form['key']
+    session = db.getSession(engine)
+    inscription = session.query(entities.InscriptionSoccer).filter(entities.InscriptionSoccer.id == id)
+    for inscription in inscriptions:
+        session.delete(inscription)
+    session.commit()
+    return "Soccer Inscription Deleted"
+"""
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - - N O T I F I C A T I O N S - - - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+#create notification
+@app.route('/notifications', methods = ['POST'])
+def post_notifications():
+    c =  json.loads(request.form['values'])
+    notification = entities.Notification(
+        date=c['date'],
+        text=c['text'],
+        type=c['type']
+    )
+    session = db.getSession(engine)
+    session.add(inscription)
+    session.commit()
+    return 'Created Sailing Inscription'
+
+#read notification
+@app.route('/sailing', methods = ['GET'])
+def get_sailing():
+    session = db.getSession(engine)
+    dbResponse = session.query(entities.InscriptionSailing)
+    data = []
+    for inscription in dbResponse:
+        data.append(inscription)
+    return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+#update notification
+@app.route('/sailing', methods = ['PUT'])
+def update_sailing():
+    session = db.getSession(engine)
+    id = request.form['key']
+    inscription = session.query(entities.InscriptionSailing).filter(entities.InscriptionSailing.id == id).first()
+    c = json.loads(request.form['values'])
+    for key in c.keys():
+        setattr(inscription, key, c[key])
+    session.add(inscription)
+    session.commit()
+    return 'Updated Sailing Inscription'
+
+#delete notification
+@app.route('/sailing', methods = ['DELETE'])
+def delete_sailing():
+    id = request.form['key']
+    session = db.getSession(engine)
+    inscription = session.query(entities.InscriptionSailing).filter(entities.InscriptionSailing.id == id)
+    for inscription in inscriptions:
+        session.delete(inscription)
+    session.commit()
+    return "Sailing Inscription Deleted"
 
 
 @app.route("/inscripcion")

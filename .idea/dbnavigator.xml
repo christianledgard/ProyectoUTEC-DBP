@@ -24,21 +24,21 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="55e60878-c5d5-4839-99c0-f5df395073bf">
-        <schema name="main" object-types="view, table" />
+      <connection connection-id="b40c39f9-f7cf-4a95-9c27-e156fc3a5af1">
+        <schema name="main" object-types="table, view" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="55e60878-c5d5-4839-99c0-f5df395073bf">
-      <console name="Connection" type="STANDARD" schema="" session="Main" />
+    <connection id="b40c39f9-f7cf-4a95-9c27-e156fc3a5af1">
+      <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="55e60878-c5d5-4839-99c0-f5df395073bf" />
+    <connection id="b40c39f9-f7cf-4a95-9c27-e156fc3a5af1" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -63,7 +63,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="55e60878-c5d5-4839-99c0-f5df395073bf" active="true">
+      <connection id="b40c39f9-f7cf-4a95-9c27-e156fc3a5af1" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -74,14 +74,13 @@
           <driver-library value="" />
           <driver value="" />
           <url-type value="FILE" />
-          <host value="" />
-          <port value="" />
-          <database value="" />
+          <host value="localhost" />
+          <port value="1234" />
+          <database value="database" />
           <files>
             <file path="$PROJECT_DIR$/web/DB.db" schema="main" />
           </files>
-          <os-authentication value="false" />
-          <empty-authentication value="false" />
+          <type value="NONE" />
           <user value="" />
           <deprecated-pwd value="" />
         </database>
@@ -119,7 +118,7 @@
           <max-connection-pool-size value="7" />
           <alternative-statement-delimiter value="" />
         </details>
-        <object-filters hide-empty-schemas="false">
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
           <object-type-filter use-master-settings="true">
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
@@ -274,12 +273,16 @@
       <qualified-text-editor text-length-threshold="300">
         <content-types>
           <content-type name="Text" enabled="true" />
+          <content-type name="Properties" enabled="true" />
           <content-type name="XML" enabled="true" />
           <content-type name="DTD" enabled="true" />
           <content-type name="HTML" enabled="true" />
           <content-type name="XHTML" enabled="true" />
+          <content-type name="CSS" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />
+          <content-type name="JavaScript" enabled="true" />
+          <content-type name="YAML" enabled="true" />
         </content-types>
       </qualified-text-editor>
       <record-navigation>
