@@ -239,7 +239,7 @@ def delete_championship():
     for championship in championships:
         session.delete(championship)
     session.commit()
-    return "User Deleted"
+    return "Championship Deleted"
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - - C R U D - S A I L I N G - - - - - #
@@ -348,6 +348,52 @@ def delete_soccer():
     session.commit()
     return "Deleted Soccer Inscription"
 
+
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - - - LOAD INSCRIPTION DATA - - - - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+"""
+#Sailing
+@app.route('/loadSailData', methods = ["POST"])
+def createUser():
+    message = json.loads(request.data)
+    try:
+        data = entities.Users(
+        sailingNumber=message['sailingNumber'],
+        category=message['category'],
+        user_id=message['user_id'],
+        championship_id=message['championship_id']
+        )
+        session = db.getSession(engine)
+        session.add(data)
+        session.commit()
+        message = {'message': 'User Created'}
+        return Response(message, status=200, mimetype='application/json')
+    except Exception:
+        message = {'message': 'Error'}
+        return Response(message, status=401, mimetype='application/json')
+
+#Soccer
+@app.route('/loadSoccerData', methods = ["POST"])
+def createUser():
+    message = json.loads(request.data)
+    try:
+        data = entities.Users(
+        soccerTeam=message['soccerTeam'],
+        category=message['category'],
+        user_id=message['user_id'],
+        championship_id=message['championship_id']
+        )
+        session = db.getSession(engine)
+        session.add(data)
+        session.commit()
+        message = {'message': 'User Created'}
+        return Response(message, status=200, mimetype='application/json')
+    except Exception:
+        message = {'message': 'Error'}
+        return Response(message, status=401, mimetype='application/json')
+"""
+
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - N O T I F I C A T I O N S - - - - - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
@@ -400,11 +446,60 @@ def delete_notification():
     return "Deleted Notification"
 
 
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - - - - - P A Y M E N T - - - - - - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+#create payment
+@app.route('/payments', methods = ['POST'])
+def post_payment():
+    c =  json.loads(request.form['values'])
+    payment = entities.Payment(
+        paymentToken=c['paymentToken'],
+        user_id=c['user_id'],
+        championship_id=c['championship_id']
+    )
+    session = db.getSession(engine)
+    session.add(payment)
+    session.commit()
+    return 'Created Payment'
+
+#read payment
+@app.route('/payments', methods = ['GET'])
+def get_payment():
+    session = db.getSession(engine)
+    dbResponse = session.query(entities.Payment)
+    data = []
+    for payment in dbResponse:
+        data.append(payment)
+    return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+#update payment
+@app.route('/payments', methods = ['PUT'])
+def update_payment():
+    session = db.getSession(engine)
+    id = request.form['key']
+    payment = session.query(entities.Payment).filter(entities.Payment.id == id).first()
+    c = json.loads(request.form['values'])
+    for key in c.keys():
+        setattr(payment, key, c[key])
+    session.add(payment)
+    session.commit()
+    return 'Updated Payment'
+
+#delete payment
+@app.route('/payments', methods = ['DELETE'])
+def delete_payment():
+    id = request.form['key']
+    session = db.getSession(engine)
+    payments = session.query(entities.Payment).filter(entities.Payment.id == id)
+    for payment in payments:
+        session.delete(payment)
+    session.commit()
+    return "Deleted Payment"
+
 @app.route("/inscripcion")
 def inscripcion():
     return render_template('form1.html')
-
-
 
 
 

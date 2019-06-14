@@ -50,6 +50,17 @@ class Notification(connector.Manager.Base):
     text = Column(String(200))
     type = Column(String(30))
 
+class Payment(connector.Manager.Base):
+    __tablename__ = 'Payments'
+    id = Column(Integer, Sequence('payments_id_seq'), primary_key=True)
+    paymentToken = Column(String(80))
+    user_id = Column(Integer, ForeignKey('Users.id'))
+    user = relationship(Users, foreign_keys=[user_id])
+    championship_id = Column(Integer, ForeignKey('Championships.id'))
+    championship = relationship(Championship, foreign_keys=[championship_id])
+
+    
+
 
 """
 class EmergencyContact(connector.Manager.Base):

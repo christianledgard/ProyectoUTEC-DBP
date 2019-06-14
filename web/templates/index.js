@@ -33,7 +33,7 @@ function refreshPage(){
                     a=a+'<button class="text" onclick="showInscriptionDiv('+response[i].id+')">Inscribete Aquí</button>';
                     a=a+'</div></div></div></div></div></div>';
                     $('#posts').append(a);
-                    i = i +  1
+                    i = i +  1;
                 });
             },
         });
@@ -48,12 +48,19 @@ function showInscriptionDiv(idChampionship){
 
   //meterle un if para saber si es vela o fut
 
-  //$("#firstCondition").html("Peso en kg");
-  //$("#secondCondition").html("Equipo");
-  //$('#insOK').attr('onclick', 'soccerLoadData('+idChampionship+')');
+  // if(idChampionship){
+  //$("#firstCondition").html("Número de Vela");
+  //$("#secondCondition").html("Tipo de vela");
+  //$('#send_button').attr('onclick', 'sailingLoadData('+idChampionship+')');
+  //$('#insOK').attr('onclick', 'sailingLoadData('+idChampionship+')');
+
+    //} else {
+    //$("#firstCondition").html("Peso en kg");
+    //$("#secondCondition").html("Equipo");
+    //$('#insOK').attr('onclick', 'soccerLoadData('+idChampionship+')');
+  //}
 
   $('#inscriptions').show();
-
   $("#titleInscription").html("Inscripción al Campeonato N"+idChampionship);
 }
 
@@ -62,8 +69,6 @@ function showInscriptionDiv(idChampionship){
 //<option value="1">4.7</option>
 //<option value="2">Radial</option>
 //<option value="3">Standard</option>
-
-
 
 
 
@@ -85,13 +90,29 @@ function sailingLoadData(idChampionship){
                 "user_id": idUser,
                 "championship_id": idChampionship
             });
-            //falta añadir el load con ajax e implementar en server con json.loads(request.data)
-
+    $.ajax({
+            url:'/loadSailData',
+            type:'POST',
+            contentType: 'application/json',
+            data : message,
+            dataType:'json',
+            success: function(response){
+                alert(JSON.stringify(response));
+            },
+            error: function(response){
+              if(response["status"]==401){
+                    alert(JSON.stringify("FAIL :("));
+    				}else{
+              alert(JSON.stringify("OK :)"));
+              window.location.href = "http://0.0.0.0:8020";
+    				    }
+            }
+        });
 }
 
 function soccerLoadData(idChampionship){
     $.ajax({
-            url:'/current',
+            url:'/loadSoccerData',
             type:'GET',
             contentType: 'application/json',
             dataType:'json',
@@ -107,7 +128,24 @@ function soccerLoadData(idChampionship){
                 "user_id": idUser,
                 "championship_id": idChampionship
             });
-            //falta añadir el load con ajax e implementar en server con json.loads(request.data)
+    $.ajax({
+            url:'/loadSoccerData',
+            type:'POST',
+            contentType: 'application/json',
+            data : message,
+            dataType:'json',
+            success: function(response){
+                alert(JSON.stringify(response));
+            },
+            error: function(response){
+              if(response["status"]==401){
+                    alert(JSON.stringify("FAIL :("));
+				     }else{
+                    alert(JSON.stringify("OK :)"));
+                    window.location.href = "http://0.0.0.0:8020";
+    				            }
+            }
+        });
 }
 
 
@@ -115,3 +153,67 @@ function cancel_inscription(){
   $('#inscriptions').hide();
   $('#principal_page').show();
 }
+
+
+function culqi() {
+  if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+      var token = Culqi.token.id;
+      paymentsPOST(token);
+      alert('Se ha creado un token:' + token);
+  } else { // ¡Hubo algún problema!
+      // Mostramos JSON de objeto error en consola
+      console.log(Culqi.error);
+      alert(Culqi.error.user_message);
+  }
+};
+
+function paymentsPOST(token) {
+    var message = JSON.stringify({
+        "paymentToken": token,
+        "user_id": 1,
+        "championship_id": 1
+    });
+    $.ajax({
+        url: '/payments',
+        type: 'POST',
+        contentType: 'application/json',
+        data: message,
+        dataType: 'json',
+        success: function (response) {
+            alert(JSON.stringify(response));
+        },
+        error: function (response) {
+            alert(JSON.stringify(response));}
+        });
+        }
+
+/*
+function culqi() {
+  if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+      var token = Culqi.token.id;
+      alert('Se ha creado un token:' + token);
+      var message = JSON.stringify({
+              "paymentToken": token,
+              "user_id": 1,
+              "championship_id":1
+          });
+      $.ajax({
+          url:'/payments',
+          type:'POST',
+          contentType: 'application/json',
+          data : message,
+          dataType:'json',
+          success: function(response){
+              alert(JSON.stringify(response));
+          },
+          error: function(response){
+
+          };
+
+  } else { // ¡Hubo algún problema!
+      // Mostramos JSON de objeto error en consola
+      console.log(Culqi.error);
+      alert(Culqi.error.user_message);
+  }
+
+  */

@@ -294,18 +294,6 @@
             Culqi.open();
             e.preventDefault();
         });
-
-        function culqi() {
-          if (Culqi.token) { // ¡Objeto Token creado exitosamente!
-              var token = Culqi.token.id;
-              alert('Se ha creado un token:' + token);
-          } else { // ¡Hubo algún problema!
-              // Mostramos JSON de objeto error en consola
-              console.log(Culqi.error);
-              alert(Culqi.error.user_message);
-          }
-        };
-        
         </script>
 
 
