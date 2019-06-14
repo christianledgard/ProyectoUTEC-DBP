@@ -362,7 +362,7 @@ def delete_soccer():
 def load_sail():
     message = json.loads(request.data)
     try:
-        data = entities.Users(
+        data = entities.InscriptionSailing(
         sailingNumber=message['sailingNumber'],
         category=message['category'],
         user_id=message['user_id'],
@@ -382,7 +382,7 @@ def load_sail():
 def load_soccer():
     message = json.loads(request.data)
     try:
-        data = entities.Users(
+        data = entities.InscriptionSoccer(
         soccerTeam=message['soccerTeam'],
         category=message['category'],
         user_id=message['user_id'],

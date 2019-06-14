@@ -1,6 +1,8 @@
 $(function(){
     var url = "http://0.0.0.0:8020/notifications";
-
+    var lookupData = [
+    { id: "OK", show: "OK" },
+    { id: "WARNING", show: "WARNING" },];
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
@@ -40,7 +42,12 @@ $(function(){
         }, {
             dataField: "text"
         }, {
-            dataField: "type"
+            dataField: "type",
+            lookup: {
+                  dataSource: lookupData,
+                  valueExpr: 'id',
+                  displayExpr: 'show'
+                }
         } ]
     }).dxDataGrid("instance");
 });

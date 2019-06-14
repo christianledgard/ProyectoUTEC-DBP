@@ -1,6 +1,8 @@
 $(function(){
     var url = "http://0.0.0.0:8020/championship";
-
+    var lookupData = [
+    { id: "sailing", show: "sailing" },
+    { id: "soccer", show: "soccer" },];
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
@@ -38,7 +40,12 @@ $(function(){
         }, {
             dataField: "description"
         },{
-            dataField: "category"
+            dataField: "category",
+            lookup: {
+                  dataSource: lookupData,
+                  valueExpr: 'id',
+                  displayExpr: 'show'
+                }
         }, {
             dataField: "price",
             dataType: "number"
