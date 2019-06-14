@@ -48,12 +48,14 @@ function showInscriptionDiv(idChampionship,categoryChampionship){
             $("#firstCondition").html("Número de Vela");
             $("#secondCondition").html("Tipo de vela");
             $('#insOK').attr('onclick', 'sailingLoadData('+idChampionship+')');
+            $('#secondInput').append('<option>Radial</option><option>4.7</option><option>Standard</option>');
   }
   if (categoryChampionship=='soccer')
   {
             $("#firstCondition").html("Peso en kg");
             $("#secondCondition").html("Equipo");
             $('#insOK').attr('onclick', 'soccerLoadData('+idChampionship+')');
+            $('#secondInput').append('<option>Masculino</option><option>Femenino</option>');
   }
   $("#titleInscription").html("Inscripción al Campeonato N"+idChampionship);
   $('#inscriptions').show();
@@ -104,7 +106,6 @@ function sailingLoadData(idChampionship){
                                     }
                         }
                     });
-
             }
         });
 }
