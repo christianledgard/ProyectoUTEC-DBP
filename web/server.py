@@ -197,7 +197,10 @@ def post_championship():
     championship = entities.Championship(
         title =c['title'],
         maxCompetitors =c['maxCompetitors'],
-        location =c['location']
+        location =c['location'],
+        description = c['description'],
+        startDate = c['startDate'],
+        endDate = c['endDate']
     )
     session = db.getSession(engine)
     session.add(championship)

@@ -17,6 +17,9 @@ class Championship(connector.Manager.Base):
     id = Column(Integer, Sequence('championships_id_seq'), primary_key=True)
     title = Column(String(50))
     maxCompetitors = Column(String(50))
+    description = Column(String(1000))
+    startDate = Column(String(15))
+    endDate = Column(String(15))
     location = Column(String(50))
 
 class InscriptionSailing(connector.Manager.Base):

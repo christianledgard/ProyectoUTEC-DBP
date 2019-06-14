@@ -26,7 +26,7 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="bd944b7f-ba6f-4b05-bc9f-c5703cea3e55">
+    <connection id="aafc7509-048a-4e56-ae74-feec94a7edb0">
       <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
@@ -34,7 +34,7 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="bd944b7f-ba6f-4b05-bc9f-c5703cea3e55" />
+    <connection id="aafc7509-048a-4e56-ae74-feec94a7edb0" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -59,7 +59,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="bd944b7f-ba6f-4b05-bc9f-c5703cea3e55" active="true">
+      <connection id="aafc7509-048a-4e56-ae74-feec94a7edb0" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -76,8 +76,7 @@
           <files>
             <file path="$PROJECT_DIR$/web/DB.db" schema="main" />
           </files>
-          <os-authentication value="false" />
-          <empty-authentication value="false" />
+          <type value="NONE" />
           <user value="" />
           <deprecated-pwd value="" />
         </database>
@@ -115,7 +114,7 @@
           <max-connection-pool-size value="7" />
           <alternative-statement-delimiter value="" />
         </details>
-        <object-filters hide-empty-schemas="false">
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
           <object-type-filter use-master-settings="true">
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
@@ -270,12 +269,16 @@
       <qualified-text-editor text-length-threshold="300">
         <content-types>
           <content-type name="Text" enabled="true" />
+          <content-type name="Properties" enabled="true" />
           <content-type name="XML" enabled="true" />
           <content-type name="DTD" enabled="true" />
           <content-type name="HTML" enabled="true" />
           <content-type name="XHTML" enabled="true" />
+          <content-type name="CSS" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />
+          <content-type name="JavaScript" enabled="true" />
+          <content-type name="YAML" enabled="true" />
         </content-types>
       </qualified-text-editor>
       <record-navigation>

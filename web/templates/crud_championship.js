@@ -36,6 +36,12 @@ $(function(){
         }, {
             dataField: "title"
         }, {
+            dataField: "description"
+        }, {
+            dataField: "startDate"
+        }, {
+            dataField: "endDate"
+        }, {
             dataField: "maxCompetitors"
         }, {
             dataField: "location"

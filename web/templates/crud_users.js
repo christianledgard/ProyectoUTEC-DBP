@@ -38,9 +38,13 @@ $(function(){
         }, {
             dataField: "lastName"
         }, {
+            dataField: "isAdmin",
+            dataType: "Boolean"
+        }, {
             dataField: "email"
         }, {
-            dataField: "password"
+            dataField: "password",
+            dataType: "Password"
         } ]
     }).dxDataGrid("instance");
 });

@@ -8,19 +8,19 @@ function refreshPage(){
                 var i = 0;
                 $.each(response, function(){
                     a='<div class="row">';
-                    a=a+'<div class="col-lg-6 mb-4">';
                     a=a+'<div class="card shadow mb-4">';
                     a=a+'<div class="card-header py-3">';
-                    a=a+'<h6 class="m-0 font-weight-bold text-primary">Campeonato N'+response[i].id+': '+response[i].title+'</h6>';
+                    a=a+'<h6 class="m-0 font-weight-bold text-primary">'+response[i].title+'</h6>';
                     a=a+'</div>';
                     a=a+'<div class="card-body">';
                     a=a+'<div class="text-center">';
                     a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/undraw_posting_photo.svg')}}" alt="">';
                     a=a+'</div>';
                     a=a+'<div class="text-left">';
-                    a=a+'<p> <b>Fecha:</b> 12-06-2019 al 15-06-2019 ARREGLAR ESTO!!</p>';
+                    a=a+'<p> <b>Fecha:</b>'+ response[i].startDate +' al '+ response[i].endDate +'</p>';
+                    //a=a+'<p> <b>Numero Máximo de Competidores:</b>'+ response[i].maxCompetitors'</p>';
                     a=a+'</div>';
-                    a=a+'<p>Add some quality, svg illustrations to your project courtesy of  a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p>';
+                    a=a+'<p>'+response[i].description+'</p>';
                     a=a+'<div>';
                     a=a+'<a target="_blank" href="https://undraw.co/">Documentos de Interés&rarr;</a>';
                     a=a+'</div>';
@@ -33,6 +33,7 @@ function refreshPage(){
                     a=a+'<button class="text" onclick="showInscriptionDiv('+response[i].id+')">Inscribete Aquí</button>';
                     a=a+'</div></div></div></div></div></div>';
                     $('#posts').append(a);
+                    i = i +  1
                 });
             },
         });
@@ -40,7 +41,6 @@ function refreshPage(){
 
 function showInscriptionDiv(idChampionship){
   $('#principal_page').hide();
-
   $("#firstCondition").html("Número de Vela");
   $("#secondCondition").html("Tipo de vela");
   $('#send_button').attr('onclick', 'sailingLoadData('+idChampionship+')');
