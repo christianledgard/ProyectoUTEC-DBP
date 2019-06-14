@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -163,7 +164,7 @@
           </button>
 
           <!-- Topbar Search-->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -172,7 +173,7 @@
                 </button>
               </div>
             </div>
-          </form>
+          </div>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -278,7 +279,7 @@
 
             <!-- Content Column -->
             <div>
-              <form class="form-horizontal">
+              <div class="form-horizontal">
                 <div class="card shadow mb-4">
                 <div class="card-header py-3 ">
                   <h6 class="m-0 font-weight-bold text-primary" id="titleInscription">Inscripción al Campeonato #####</h6>
@@ -300,9 +301,6 @@
                     <div class="col-md-4">
                       <select id="secondInput" name="secondInput" class="form-control" >
                         <option value="">-Seleccionar-</option>
-                        <option value="1">4.7</option>
-                        <option value="2">Radial</option>
-                        <option value="3">Standard</option>
                       </select>
                     </div>
                     <div class="payment">
@@ -327,7 +325,7 @@
 
                   <!-- Multiple Checkboxes (inline) -->
                   <div class="form-group">
-                    <label class="col-md-12 control-label" for="TerminosyCondiciones"><b>Términos y Condiciones</b></label>
+                    <label class="col-md-12 control-label" ><b>Términos y Condiciones</b></label>
                     <div class="col-md-12">
                       <label class="checkbox-inline" for="TerminosyCondiciones-0">
                         <input type="checkbox" name="TerminosyCondiciones" id="TerminosyCondiciones-0" value="1">
@@ -341,13 +339,13 @@
                     <label class="col-md-4 control-label" for="insOK"></label>
                     <div class="col-md-8">
                       <button id="insOK" name="insOK" class="btn btn-success" onclick="ok_inscription">Realizar la Inscripción</button>
-                      <button id="insCANCELAR" name="insCANCELAR" class="btn btn-danger" onclick="cancel_inscription">Cancelar</button>
+                      <button id="insCANCELAR" name="insCANCELAR" class="btn btn-danger" onclick="cancel_inscription()">Cancelar</button>
                     </div>
                   </div>
 
                   </fieldset>
 
-              </form>
+              </div>
 
 
                 </div>

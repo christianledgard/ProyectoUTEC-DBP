@@ -1,5 +1,4 @@
 function refreshPage(){
-
     notifications();
     $.ajax({
             url:'/championship',
@@ -49,22 +48,18 @@ function showInscriptionDiv(idChampionship,categoryChampionship){
             $("#firstCondition").html("Número de Vela");
             $("#secondCondition").html("Tipo de vela");
             $('#insOK').attr('onclick', 'sailingLoadData('+idChampionship+')');
+            $('#secondInput').append('<option>4.7</option><option>Radial</option><option>Standard</option>');
   }
   if (categoryChampionship=='soccer')
   {
             $("#firstCondition").html("Peso en kg");
             $("#secondCondition").html("Equipo");
             $('#insOK').attr('onclick', 'soccerLoadData('+idChampionship+')');
+            $('#secondInput').append('<option>Masculino</option><option>Femenino</option>');
   }
   $("#titleInscription").html("Inscripción al Campeonato N"+idChampionship);
   $('#inscriptions').show();
 }
-
-//<select id="secondInput" name="secondInput" class="form-control" >
-//<option value="">-Seleccionar-</option>
-//<option value="1">4.7</option>
-//<option value="2">Radial</option>
-//<option value="3">Standard</option>
 
 function sailingLoadData(idChampionship){
     $.ajax({
@@ -73,34 +68,45 @@ function sailingLoadData(idChampionship){
             contentType: 'application/json',
             dataType:'json',
             success: function(response){
-                idUser = response['id']
-            }
-        });
-    var firstCondition = $('#firstCondition').val();
-    var secondCondition = $("#secondCondition").val();
-    var message = JSON.stringify({
-                "sailingNumber": firstCondition,
-                "category": secondCondition,
-                "user_id": idUser,
-                "championship_id": idChampionship
-            });
+                idUser = response.id;
+                if( !$('#TerminosyCondiciones-0').prop('checked') ) {
+                     return alert('Revise los campos solicitados');
+                }
+                var firstInput = $('#firstInput').val();
+                if (firstInput=='')
+		        {
+                     return alert(JSON.stringify("Revise los campos solicitados"));
+                }
+                var secondInput = $("#secondInput option:selected").text();
+                if (secondInput=='-Seleccionar-')
+                {
+                     return alert(JSON.stringify("Revise los campos solicitados"));
+                }
+                var message = JSON.stringify({
+                            "sailingNumber": firstInput,
+                            "category": secondInput,
+                            "user_id": idUser,
+                            "championship_id": idChampionship
+                        });
+                $.ajax({
+                        url:'/loadSailData',
+                        type:'POST',
+                        contentType: 'application/json',
+                        data : message,
+                        dataType:'json',
+                        //success: function(response){
+                            //alert("Inscripción con éxito");
+                        //},
+                        error: function(response){
+                          if(response["status"]==401){
+                                alert(JSON.stringify("FAIL"));
+                                }else{
+                          alert("Inscripción realizada con éxito");
+                          window.location.href = "http://0.0.0.0:8020";
+                                    }
+                        }
+                    });
 
-    $.ajax({
-            url:'/loadSailData',
-            type:'POST',
-            contentType: 'application/json',
-            data : message,
-            dataType:'json',
-            success: function(response){
-                alert(JSON.stringify(response));
-            },
-            error: function(response){
-              if(response["status"]==401){
-                    alert(JSON.stringify("FAIL :("));
-    				}else{
-              alert(JSON.stringify("OK :)"));
-              window.location.href = "http://0.0.0.0:8020";
-    				    }
             }
         });
 }
@@ -112,37 +118,48 @@ function soccerLoadData(idChampionship){
             contentType: 'application/json',
             dataType:'json',
             success: function(response){
-                idUser = response['id']
+                idUser = response['id'];
+                if( !$('#TerminosyCondiciones-0').prop('checked') ) {
+                     return alert('Revise los campos solicitados');
+                }
+                var firstInput = $('#firstInput').val();
+                if (firstInput=='')
+                {
+                     return alert(JSON.stringify("Revise los campos solicitados"));
+                }
+                var secondInput = $("#secondInput").val();
+                if (secondInput=='-Seleccionar-')
+                {
+                     return alert(JSON.stringify("Revise los campos solicitados"));
+                }
+                var message = JSON.stringify({
+                            "category": firstInput,
+                            "soccerTeam": secondInput,
+                            "user_id": idUser,
+                            "championship_id": idChampionship
+                        });
+                $.ajax({
+                        url:'/loadSoccerData',
+                        type:'POST',
+                        contentType: 'application/json',
+                        data : message,
+                        dataType:'json',
+                        //success: function(response){
+                            //alert("Inscripción con éxito");
+                        //},
+                        error: function(response){
+                          if(response["status"]==401){
+                                alert(JSON.stringify("FAIL :("));
+                                 }else{
+                                alert("Inscripción realizada con éxito");
+                                window.location.href = "http://0.0.0.0:8020";
+                                            }
+                        }
+                    });
             }
         });
-    var firstCondition = $('#firstCondition').val();
-    var secondCondition = $("#secondCondition").val();
-    var message = JSON.stringify({
-                "category": firstCondition,
-                "soccerTeam": secondCondition,
-                "user_id": idUser,
-                "championship_id": idChampionship
-            });
-    $.ajax({
-            url:'/loadSoccerData',
-            type:'POST',
-            contentType: 'application/json',
-            data : message,
-            dataType:'json',
-            success: function(response){
-                alert(JSON.stringify(response));
-            },
-            error: function(response){
-              if(response["status"]==401){
-                    alert(JSON.stringify("FAIL :("));
-				     }else{
-                    alert(JSON.stringify("OK :)"));
-                    window.location.href = "http://0.0.0.0:8020";
-    				            }
-            }
-        });
-
 }
+
 
 
 function cancel_inscription(){
