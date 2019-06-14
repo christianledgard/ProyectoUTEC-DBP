@@ -84,6 +84,7 @@ function sailingLoadData(idChampionship){
                 "user_id": idUser,
                 "championship_id": idChampionship
             });
+
     $.ajax({
             url:'/loadSailData',
             type:'POST',
@@ -140,6 +141,7 @@ function soccerLoadData(idChampionship){
     				            }
             }
         });
+
 }
 
 
