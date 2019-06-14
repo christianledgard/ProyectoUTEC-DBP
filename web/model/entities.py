@@ -16,6 +16,7 @@ class Championship(connector.Manager.Base):
     __tablename__ = 'Championships'
     id = Column(Integer, Sequence('championships_id_seq'), primary_key=True)
     title = Column(String(50))
+    category = Column(String(10))
     maxCompetitors = Column(String(50))
     description = Column(String(1000))
     startDate = Column(String(15))
@@ -46,7 +47,7 @@ class InscriptionSoccer(connector.Manager.Base):
 class Notification(connector.Manager.Base):
     __tablename__ = 'Notifications'
     id = Column(Integer, Sequence('notifications_id_seq'), primary_key=True)
-    date = Column(default=datetime.now())
+    date = Column(DateTime())
     text = Column(String(200))
     type = Column(String(30))
 
@@ -59,7 +60,7 @@ class Payment(connector.Manager.Base):
     championship_id = Column(Integer, ForeignKey('Championships.id'))
     championship = relationship(Championship, foreign_keys=[championship_id])
 
-    
+
 
 
 """

@@ -39,29 +39,22 @@ function refreshPage(){
         });
 }
 
-function showInscriptionDiv(idChampionship){
+function showInscriptionDiv(idChampionship,categoryChampionship){
   $('#principal_page').hide();
-  $("#firstCondition").html("Número de Vela");
-  $("#secondCondition").html("Tipo de vela");
-  $('#send_button').attr('onclick', 'sailingLoadData('+idChampionship+')');
-  $('#insOK').attr('onclick', 'sailingLoadData('+idChampionship+')');
-
-  //meterle un if para saber si es vela o fut
-
-  // if(idChampionship){
-  //$("#firstCondition").html("Número de Vela");
-  //$("#secondCondition").html("Tipo de vela");
-  //$('#send_button').attr('onclick', 'sailingLoadData('+idChampionship+')');
-  //$('#insOK').attr('onclick', 'sailingLoadData('+idChampionship+')');
-
-    //} else {
-    //$("#firstCondition").html("Peso en kg");
-    //$("#secondCondition").html("Equipo");
-    //$('#insOK').attr('onclick', 'soccerLoadData('+idChampionship+')');
-  //}
-
-  $('#inscriptions').show();
+  if (categoryChampionship=='sailing')
+  {
+            $("#firstCondition").html("Número de Vela");
+            $("#secondCondition").html("Tipo de vela");
+            $('#insOK').attr('onclick', 'sailingLoadData('+idChampionship+')');
+  }
+  if (categoryChampionship=='soccer')
+  {
+            $("#firstCondition").html("Peso en kg");
+            $("#secondCondition").html("Equipo");
+            $('#insOK').attr('onclick', 'soccerLoadData('+idChampionship+')');
+  }
   $("#titleInscription").html("Inscripción al Campeonato N"+idChampionship);
+  $('#inscriptions').show();
 }
 
 //<select id="secondInput" name="secondInput" class="form-control" >
@@ -69,8 +62,6 @@ function showInscriptionDiv(idChampionship){
 //<option value="1">4.7</option>
 //<option value="2">Radial</option>
 //<option value="3">Standard</option>
-
-
 
 function sailingLoadData(idChampionship){
     $.ajax({
@@ -174,7 +165,7 @@ function paymentsPOST(token) {
         "championship_id": 1
     });
     $.ajax({
-        url: '/payments',
+        url: '/paymentCULQUI',
         type: 'POST',
         contentType: 'application/json',
         data: message,

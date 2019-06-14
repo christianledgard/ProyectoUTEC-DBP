@@ -5,6 +5,7 @@ from flask_wtf import FlaskForm
 from wtforms import TextField, BooleanField, PasswordField, TextAreaField, validators
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
+from flask_httpauth import HTTPBasicAuth
 
 from database import connector
 from model import entities
@@ -14,6 +15,7 @@ import json
 db = connector.Manager()
 engine = db.createEngine()
 app = Flask(__name__)
+
 
 
 @app.route('/')
@@ -64,7 +66,7 @@ def current_user():
                     mimetype='application/json')
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
-# - - - - - - - - - L O G O U T - - - - - - - - #
+# - - - - - - - -  L O G O U T  - - - - - - - - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
 
 @app.route('/logout', methods = ['GET'])
@@ -197,6 +199,7 @@ def post_championship():
     championship = entities.Championship(
         title =c['title'],
         maxCompetitors =c['maxCompetitors'],
+        category =c['category'],
         location =c['location'],
         description = c['description'],
         startDate = c['startDate'],
@@ -352,10 +355,9 @@ def delete_soccer():
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - - LOAD INSCRIPTION DATA - - - - - - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
-"""
 #Sailing
 @app.route('/loadSailData', methods = ["POST"])
-def createUser():
+def load_sail():
     message = json.loads(request.data)
     try:
         data = entities.Users(
@@ -375,7 +377,7 @@ def createUser():
 
 #Soccer
 @app.route('/loadSoccerData', methods = ["POST"])
-def createUser():
+def load_soccer():
     message = json.loads(request.data)
     try:
         data = entities.Users(
@@ -392,7 +394,6 @@ def createUser():
     except Exception:
         message = {'message': 'Error'}
         return Response(message, status=401, mimetype='application/json')
-"""
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - N O T I F I C A T I O N S - - - - - #
@@ -434,6 +435,7 @@ def update_notification():
     session.commit()
     return 'Updated Notification'
 
+
 #delete notification
 @app.route('/notifications', methods = ['DELETE'])
 def delete_notification():
@@ -449,6 +451,22 @@ def delete_notification():
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - - - - P A Y M E N T - - - - - - - - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
+#create payment
+@app.route('/paymentCULQUI', methods = ['POST'])
+def post_payment_culqui():
+    c = json.loads(request.data)
+    payment = entities.Payment(
+        paymentToken=c['paymentToken'],
+        user_id=c['user_id'],
+        championship_id=c['championship_id']
+    )
+    session = db.getSession(engine)
+    session.add(payment)
+    session.commit()
+    message = {'message': 'Authorized'}
+    return Response(message, status=200, mimetype='application/json')
+
+
 #create payment
 @app.route('/payments', methods = ['POST'])
 def post_payment():

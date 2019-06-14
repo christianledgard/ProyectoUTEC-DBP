@@ -37,6 +37,8 @@ $(function(){
             dataField: "title"
         }, {
             dataField: "description"
+        },{
+            dataField: "category"
         }, {
             dataField: "startDate"
         }, {
