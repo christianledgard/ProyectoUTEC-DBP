@@ -48,14 +48,12 @@ function showInscriptionDiv(idChampionship,categoryChampionship){
             $("#firstCondition").html("Número de Vela");
             $("#secondCondition").html("Tipo de vela");
             $('#insOK').attr('onclick', 'sailingLoadData('+idChampionship+')');
-            $('#secondInput').append('<option>4.7</option><option>Radial</option><option>Standard</option>');
   }
   if (categoryChampionship=='soccer')
   {
             $("#firstCondition").html("Peso en kg");
             $("#secondCondition").html("Equipo");
             $('#insOK').attr('onclick', 'soccerLoadData('+idChampionship+')');
-            $('#secondInput').append('<option>Masculino</option><option>Femenino</option>');
   }
   $("#titleInscription").html("Inscripción al Campeonato N"+idChampionship);
   $('#inscriptions').show();
@@ -119,9 +117,6 @@ function soccerLoadData(idChampionship){
             dataType:'json',
             success: function(response){
                 idUser = response['id'];
-                if( !$('#TerminosyCondiciones-0').prop('checked') ) {
-                     return alert('Revise los campos solicitados');
-                }
                 var firstInput = $('#firstInput').val();
                 if (firstInput=='')
                 {
