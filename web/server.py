@@ -201,6 +201,7 @@ def post_championship():
         title =c['title'],
         maxCompetitors =c['maxCompetitors'],
         category =c['category'],
+        price=c['price'],
         location =c['location'],
         description = c['description'],
         startDate = c['startDate'],

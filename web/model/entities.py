@@ -19,6 +19,7 @@ class Championship(connector.Manager.Base):
     category = Column(String(10))
     maxCompetitors = Column(String(50))
     description = Column(String(1000))
+    price = Column(Integer)
     startDate = Column(String(15))
     endDate = Column(String(15))
     location = Column(String(50))

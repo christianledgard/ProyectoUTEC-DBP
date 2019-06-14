@@ -40,6 +40,9 @@ $(function(){
         },{
             dataField: "category"
         }, {
+            dataField: "price",
+            dataType: "number"
+        },{
             dataField: "startDate"
         }, {
             dataField: "endDate"
