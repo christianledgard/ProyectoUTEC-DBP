@@ -14,7 +14,7 @@ function refreshPage(){
                     a=a+'</div>';
                     a=a+'<div class="card-body">';
                     a=a+'<div class="text-center">';
-                    a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/undraw_posting_photo.svg')}}" alt="">';
+                    a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/soccer.jpg')}}" alt="">';
                     a=a+'</div>';
                     a=a+'<div class="text-left">';
                     a=a+'<p> <b>Fecha:</b>'+ response[i].startDate +' al '+ response[i].endDate +'</p>';
