@@ -47,7 +47,7 @@ class InscriptionSoccer(connector.Manager.Base):
 class Notification(connector.Manager.Base):
     __tablename__ = 'Notifications'
     id = Column(Integer, Sequence('notifications_id_seq'), primary_key=True)
-    date = Column(DateTime())
+    date = Column(default=datetime.now())
     text = Column(String(200))
     type = Column(String(30))
 

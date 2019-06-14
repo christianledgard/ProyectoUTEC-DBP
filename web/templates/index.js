@@ -1,4 +1,6 @@
 function refreshPage(){
+
+    notifications();
     $.ajax({
             url:'/championship',
             type:'GET',
@@ -14,7 +16,7 @@ function refreshPage(){
                     a=a+'</div>';
                     a=a+'<div class="card-body">';
                     a=a+'<div class="text-center">';
-                    a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/undraw_posting_photo.svg')}}" alt="">';
+                    a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/soccer.jpg')}}" alt="">';
                     a=a+'</div>';
                     a=a+'<div class="text-left">';
                     a=a+'<p> <b>Fecha:</b>'+ response[i].startDate +' al '+ response[i].endDate +'</p>';
@@ -30,13 +32,14 @@ function refreshPage(){
                     a=a+'<span class="icon text-white-50">';
                     a=a+'<i class="fas fa-check"></i>';
                     a=a+'</span>';
-                    a=a+'<button class="text" onclick="showInscriptionDiv('+response[i].id+')">Inscribete Aquí</button>';
+                    a=a+'<button class="text" onclick=showInscriptionDiv('+response[i].id+','+"'"+response[i].category+"'"+')>Inscribete Aquí</button>';
                     a=a+'</div></div></div></div></div></div>';
                     $('#posts').append(a);
                     i = i +  1;
                 });
             },
         });
+        $('#loader').hide();
 }
 
 function showInscriptionDiv(idChampionship,categoryChampionship){
@@ -103,7 +106,7 @@ function sailingLoadData(idChampionship){
 
 function soccerLoadData(idChampionship){
     $.ajax({
-            url:'/loadSoccerData',
+            url:'/current',
             type:'GET',
             contentType: 'application/json',
             dataType:'json',
@@ -178,33 +181,39 @@ function paymentsPOST(token) {
         });
         }
 
-/*
-function culqi() {
-  if (Culqi.token) { // ¡Objeto Token creado exitosamente!
-      var token = Culqi.token.id;
-      alert('Se ha creado un token:' + token);
-      var message = JSON.stringify({
-              "paymentToken": token,
-              "user_id": 1,
-              "championship_id":1
-          });
-      $.ajax({
-          url:'/payments',
-          type:'POST',
+function notifications() {
+  $.ajax({
+          url:'/notifications',
+          type:'GET',
           contentType: 'application/json',
-          data : message,
           dataType:'json',
           success: function(response){
-              alert(JSON.stringify(response));
+              var i = 0;
+
+              var class1_WARNING = 'icon-circle bg-warning'
+              var class2_WARNING = 'fas fa-exclamation-triangle text-white'
+              var class1_OK = 'icon-circle bg-primary'
+              var class2_OK = 'fas fa-file-alt text-white'
+
+              $.each(response, function(){
+                var class1, class2;
+                if (response[i].type=="OK") {
+                    class1 = class1_OK;
+                    class2 = class2_OK;
+                }else if (response[i].type=="WARNING") {
+                    class1 = class1_WARNING;
+                    class2 = class2_WARNING;
+                }
+                  a='<a class="dropdown-item d-flex align-items-center" href="#">';
+                  a=a+'<div class="mr-3"><div class="'+ class1 +'"><i class="'+ class2 +'"></i>'
+                  a=a+'</div></div><div>';
+                  a=a+'<div class="small text-gray-500">'+response[i].date+'</div>';
+                  a=a+'<span>'+response[i].text+'</span>';
+                  a=a+'</div></a>';
+                  $('#notification').append(a);
+                  i = i +  1;
+              });
           },
-          error: function(response){
+      });
 
-          };
-
-  } else { // ¡Hubo algún problema!
-      // Mostramos JSON de objeto error en consola
-      console.log(Culqi.error);
-      alert(Culqi.error.user_message);
-  }
-
-  */
+}

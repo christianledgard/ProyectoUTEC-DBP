@@ -5,7 +5,9 @@ from flask_wtf import FlaskForm
 from wtforms import TextField, BooleanField, PasswordField, TextAreaField, validators
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
-from flask_httpauth import HTTPBasicAuth
+
+from flask_login import LoginManager,current_user, login_user
+
 
 from database import connector
 from model import entities
@@ -21,7 +23,6 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     return render_template('index.html')
-
 
 @app.route('/static/<content>')
 def static_content(content):
@@ -398,12 +399,12 @@ def load_soccer():
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - N O T I F I C A T I O N S - - - - - #
 # - - - - - - - - - - - - - - - - - - - - - - - #
+
 #create notification
 @app.route('/notifications', methods = ['POST'])
 def post_notification():
     c =  json.loads(request.form['values'])
     notification = entities.Notification(
-        date=c['date'],
         text=c['text'],
         type=c['type']
     )

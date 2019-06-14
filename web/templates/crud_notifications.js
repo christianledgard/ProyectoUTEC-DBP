@@ -40,8 +40,6 @@ $(function(){
         }, {
             dataField: "text"
         }, {
-            dataField: "email"
-        }, {
             dataField: "type"
         } ]
     }).dxDataGrid("instance");
