@@ -1,6 +1,8 @@
 $(function(){
     var url = "http://0.0.0.0:8020/users";
-
+    var lookupData = [
+    { id: true, show: "Administrador" },
+    { id: false, show: "Usuario" },];
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
@@ -39,7 +41,11 @@ $(function(){
             dataField: "lastName"
         }, {
             dataField: "isAdmin",
-            dataType: "Boolean"
+            lookup: {
+                  dataSource: lookupData,
+                  valueExpr: 'id',
+                  displayExpr: 'show'
+                }
         }, {
             dataField: "email"
         }, {
