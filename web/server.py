@@ -37,6 +37,7 @@ def static_content(content):
             else:
                 raise Exception
         except Exception:
+            session.clear()
             return render_template('login.html')
     else:
         return render_template(content)
@@ -95,6 +96,7 @@ def logout():
 
 @app.route("/register")
 def register():
+    session.clear()
     return render_template('register.html')
 
 

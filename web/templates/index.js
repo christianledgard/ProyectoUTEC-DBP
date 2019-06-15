@@ -99,6 +99,20 @@ function hello(){
     }
   $('#Hello').html("¡Hola " + firstName + "!");
   $('#Profile').html(firstName + " " + lastName);
+  $.ajax({
+          url:'/notifications',
+          type:'GET',
+          contentType: 'application/json',
+          dataType:'json',
+          async: false,
+          success: function(response){
+            $('#countNotifications').html(Object.keys(response).length);
+            },
+          error: function(response){
+              alert(JSON.stringify(response));
+          }
+    });
+
 }
 
 
