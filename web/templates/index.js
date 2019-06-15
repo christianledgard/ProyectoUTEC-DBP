@@ -65,6 +65,7 @@ function showInscriptionDiv(idChampionship,categoryChampionship){
 
 function hello(){
   var firstName;
+  var lastName;
   $.ajax({
           url:'/current',
           type:'GET',
@@ -73,12 +74,14 @@ function hello(){
           async: false,
           success: function(response){
               firstName = response.firstName;
+              lastName = response.lastName;
             },
           error: function(response){
               alert(JSON.stringify(response));
           }
 });
   $('#Hello').html("¡Hola " + firstName + "!");
+  $('#Profile').html(firstName + " " + lastName);
 }
 
 
