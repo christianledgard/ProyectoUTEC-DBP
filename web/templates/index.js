@@ -88,13 +88,8 @@ function hello(){
     });
   if (isAdmin==true)
     {
-        $('#admin_att1').show();
-        $('#admin_att2').show();
-        $('#admin_att3').show();
-        $('#admin_att4').show();
-        $('#admin_att5').show();
-        $('#admin_att6').show();
-        $('#admin_att7').show();
+        $('#adminAtt1').show();
+        $('#adminAtt2').show();
     }
   $('#Hello').html("¡Hola " + firstName + "!");
   $('#Profile').html(firstName + " " + lastName);

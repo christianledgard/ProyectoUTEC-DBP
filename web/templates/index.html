@@ -78,15 +78,28 @@
           <span>Logout</span></a>
       </li>
 
-      <!-- Nav Item - Charts
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Registrate</span></a>
-      </li>-->
+      <!-- Nav Item - Charts-->
+      <li class="nav-item" id="adminAtt1" style="display:none">
+        <a class="nav-link" href="/static/crud_championship.html">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Crear campeonato</span></a>
+      </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item" id="adminAtt2" style="display:none">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Ver inscripciones</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Usuarios inscritos en:</h6>
+            <a class="collapse-item" href="/static/crud_sailing.html">Vela</a>
+            <a class="collapse-item" href="/static/crud_soccer.html">Fútbol</a>
+          </div>
+        </div>
+      </li>
+
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -176,19 +189,6 @@
               </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="/static/crud_championship.html" id="admin_att1" style="display:none">
-                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400" id="admin_att2" style="display:none"></i>
-                Crear campeonato
-              </a>
-              <a class="dropdown-item" href="/static/crud_sailing.html" id="admin_att3" style="display:none">
-                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400" id="admin_att4"style="display:none"></i>
-                Inscritos en vela
-              </a>
-              <a class="dropdown-item" href="/static/crud_soccer.html" id="admin_att5"style="display:none">
-                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400" id="admin_att6"style="display:none"></i>
-                Inscritos en fútbol
-              </a>
-              <div class="dropdown-divider" id="admin_att7"style="display:none"></div>
               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Cerrar sesión

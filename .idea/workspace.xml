@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f69bb-c842-4c3f-bd98-7e7eba7699f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/web/DB.db" beforeDir="false" afterPath="$PROJECT_DIR$/web/DB.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/index.js" afterDir="false" />
     </list>
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/templates/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="286" column="32" selection-start-line="286" selection-start-column="32" selection-end-line="286" selection-end-column="32" />
+            <state relative-caret-position="184">
+              <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -27,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="300">
+              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
               <folding>
                 <element signature="e#0#86#0" expanded="true" />
               </folding>
@@ -51,16 +49,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="188" column="35" lean-forward="true" selection-start-line="188" selection-start-column="35" selection-end-line="188" selection-end-column="35" />
+            <state relative-caret-position="488">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#1;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#2;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#2;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#4;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#footer#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -71,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/templates/form1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="259" column="52" lean-forward="true" selection-start-line="259" selection-start-column="16" selection-end-line="259" selection-end-column="52" />
+            <state relative-caret-position="340">
+              <caret line="69" column="11" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="69" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -88,11 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showInsc</find>
-      <find>2400</find>
-      <find>json</find>
-      <find>json.load</find>
-      <find>json.loads</find>
       <find>json.loads(request.d</find>
       <find>inscripc</find>
       <find>ok_</find>
@@ -108,7 +96,6 @@
       <find>cancel</find>
       <find>pages</find>
       <find>addons</find>
-      <find>charts</find>
       <find>dashb</find>
       <find>user</find>
       <find>user inf</find>
@@ -117,7 +104,13 @@
       <find>config</find>
       <find>Cerrar</find>
       <find>admin_att</find>
+      <find>logout</find>
+      <find>create</find>
+      <find>show</find>
+      <find>inscritos</find>
       <find>logg</find>
+      <find>charts</find>
+      <find>components</find>
     </findStrings>
     <replaceStrings>
       <replace>md-12</replace>
@@ -407,13 +400,13 @@
     <frame x="847" y="42" width="813" height="909" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.40530303" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.11363637" />
       <window_info id="Structure" order="1" weight="0.24959612" />
       <window_info id="DB Browser" order="2" weight="0.32956383" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4983845" visible="true" weight="0.4331361" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4983845" visible="true" weight="0.17751479" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -433,13 +426,13 @@
       <window_info anchor="right" id="SciView" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10500309" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11363637" />
       <window_info id="Structure" order="1" weight="0.24959612" />
       <window_info id="DB Browser" order="2" weight="0.32956383" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4988086" visible="true" weight="0.17988166" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4983845" visible="true" weight="0.17751479" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -447,7 +440,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32898173" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960285" weight="0.32898173" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.32678822" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016155" side_tool="true" weight="0.4149766" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.49960285" weight="0.32959327" />
       <window_info anchor="bottom" id="DB Execution Console" order="12" weight="0.32810047" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
@@ -600,10 +593,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/form1.html">
+    <entry file="file://$PROJECT_DIR$/web/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="259" column="52" lean-forward="true" selection-start-line="259" selection-start-column="16" selection-end-line="259" selection-end-column="52" />
+        <state relative-caret-position="300">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#86#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -617,28 +613,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/server.py">
+    <entry file="file://$PROJECT_DIR$/web/templates/form1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#86#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="69" column="11" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="69" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="188" column="35" lean-forward="true" selection-start-line="188" selection-start-column="35" selection-end-line="188" selection-end-column="35" />
+        <state relative-caret-position="488">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#1;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#2;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#4;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#footer#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -647,8 +635,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="286" column="32" selection-start-line="286" selection-start-column="32" selection-end-line="286" selection-end-column="32" />
+        <state relative-caret-position="184">
+          <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
         </state>
       </provider>
     </entry>
