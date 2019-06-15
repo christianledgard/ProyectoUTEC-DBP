@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f69bb-c842-4c3f-bd98-7e7eba7699f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/DB.db" beforeDir="false" afterPath="$PROJECT_DIR$/web/DB.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
