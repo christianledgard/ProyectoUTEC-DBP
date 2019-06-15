@@ -73,7 +73,7 @@
 					</div>
           <hr>
           <div class="text-center">
-            <a class="small" href="/static/register.html">¡Crear una cuenta!</a>
+            <a class="small" href="/register">¡Crear una cuenta!</a>
                   </div>
                 </div>
               </div>
@@ -105,10 +105,8 @@
             data : message,
             dataType:'json',
             success: function(response){
-                alert(JSON.stringify(response));
             },
             error: function(response){
-              alert(JSON.stringify(response));
               if(response["status"]==401){
 					$('#correctPassoword').hide();
                     $('#wrongPassoword').show();

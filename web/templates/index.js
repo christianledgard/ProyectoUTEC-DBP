@@ -15,7 +15,7 @@ function refreshPage(){
                     a=a+'<h6 class="m-0 font-weight-bold text-primary">'+response[i].title+'</h6>';
                     a=a+'</div>';
                     a=a+'<div class="card-body">';
-                    a=a+'<div class="text-center">'; 
+                    a=a+'<div class="text-center">';
                     if (response[i].category=='sailing')
                         a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/sailing.jpg')}}" alt="">';
                     if (response[i].category=='soccer')
@@ -95,6 +95,7 @@ function hello(){
     {
         $('#adminAtt1').show();
         $('#adminAtt2').show();
+        $('#adminAtt3').show();
     }
   $('#Hello').html("¡Hola " + firstName + "!");
   $('#Profile').html(firstName + " " + lastName);

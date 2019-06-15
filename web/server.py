@@ -27,7 +27,20 @@ def main():
 
 @app.route('/static/<content>')
 def static_content(content):
-    return render_template(content)
+    if content[0:4]=="crud":
+        try:
+            currentID = session['logged_user']
+            db_session = db.getSession(engine)
+            user = db_session.query(entities.Users).filter(entities.Users.id == currentID).one()
+            if user.isAdmin:
+                return render_template(content)
+            else:
+                raise Exception
+        except Exception:
+            return render_template('login.html')
+    else:
+        return render_template(content)
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - - - - - L O G I N - - - - - - - - - #

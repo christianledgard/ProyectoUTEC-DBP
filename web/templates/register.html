@@ -57,7 +57,7 @@
                 <hr>
 
               <div class="text-center">
-                <a class="small" href="login.html">Already have an account? Login!</a>
+                <a class="small" href="login">Already have an account? Login!</a>
               </div>
             </div>
           </div>
@@ -92,9 +92,9 @@
             },
             error: function(response){
               if(response["status"]==401){
-                    alert(JSON.stringify("FAIL :("));
+                    alert("Ha ocurrido un error. Intente nuevamente. ☹️");
 				}else{
-                    alert(JSON.stringify("OK :)"));
+                    alert("Cuenta registrada correctamente. 😁");
                     window.location.href = "http://0.0.0.0:8020";
 				}
             }

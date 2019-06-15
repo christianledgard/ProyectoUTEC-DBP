@@ -71,18 +71,14 @@
           <span>Create a New Account</span></a>
       </li>
 
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
-          <i class="fas fa-fw fa-sign-out-alt"></i>
-          <span>Logout</span></a>
-      </li>
 
       <!-- Nav Item - Charts-->
+
+
       <li class="nav-item" id="adminAtt1" style="display:none">
         <a class="nav-link" href="/static/crud_championship.html">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Crear campeonato</span></a>
+          <span>Crear Campeonato</span></a>
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
@@ -99,7 +95,30 @@
           </div>
         </div>
       </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item" id="adminAtt3" style="display:none">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Settings</span>
+        </a>
+        <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Administration Tools</h6>
+            <a class="collapse-item" href="/static/crud_users.html">Manage Users</a>
+            <a class="collapse-item" href="/static/crud_notifications.html">Manage Notifications</a>
+            <a class="collapse-item" href="/static/crud_payments.html">Manage Payments</a>
 
+          </div>
+        </div>
+      </li>
+
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+          <i class="fas fa-fw fa-sign-out-alt"></i>
+          <span>Logout</span></a>
+      </li>
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -185,7 +204,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="Profile"></span>
-                <img class="img-profile rounded-circle" src="https://www.brandeps.com/icon-download/U/User-01.svg">
+                <img class="img-profile rounded-circle" src="/static/img/user.svg">
               </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
