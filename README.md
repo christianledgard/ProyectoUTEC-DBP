@@ -23,3 +23,5 @@
               y seleccionar tu equipo, acto seguido  aceptar "Términos y Condiciones" 
               y proceder con el pago para completar la inscripción.
         
+* El usuario puede ser administrador para crear eventos deportivos pero no es necesario ya que,
+nosotros se lo facilitamos.
