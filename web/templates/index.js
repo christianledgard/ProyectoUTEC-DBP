@@ -208,7 +208,7 @@ function soccerLoadData(idChampionship){
                                  }else{}
                         }
                     });
-
+ 
                     $.ajax({
                             url:'/championship',
                             type:'GET',

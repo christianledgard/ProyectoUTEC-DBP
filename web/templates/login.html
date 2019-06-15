@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-{% block content %}
 
 <html lang="es">
 
@@ -41,7 +40,7 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Member Login</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Easy Sport</h1>
                   </div>
                   <div class="user" id="frmPrincipal" >
                     <div class="alert alert-danger" id = "wrongPassoword" style="display: none">
@@ -68,23 +67,15 @@
                     <button class="btn btn-primary btn-user btn-block" value="login" onclick="getData()">
                       Ingresar
                     </button>
+
                     <div class="form-group">
 						<img id="loading" src="/static/img/login/loading.gif" style="display: none"/>
 					</div>
+          <hr>
+          <br><br><br><br>
+          <div class="text-center">
+            <a class="small" href="/static/register.html">¡Crear una cuenta!</a>
                     <hr>
-                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                      <i class="fab fa-google fa-fw"></i> Ingresar por Google
-                    </a>
-                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                      <i class="fab fa-facebook-f fa-fw"></i> Ingresar por Facebook
-                    </a>
-                  </div>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">¿Olvidaste tu contraseña?</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="/static/register.html">¡Crear una cuenta!</a>
                   </div>
                 </div>
               </div>
@@ -151,4 +142,3 @@
 </body>
 
 </html>
-{% endblock %}
