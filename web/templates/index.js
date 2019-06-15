@@ -1,5 +1,6 @@
 function refreshPage(){
     notifications();
+    hello();
     $.ajax({
             url:'/championship',
             type:'GET',
@@ -39,6 +40,7 @@ function refreshPage(){
             },
         });
         $('#loader').hide();
+        $('#footer').show();
 }
 
 function showInscriptionDiv(idChampionship,categoryChampionship){
@@ -60,6 +62,25 @@ function showInscriptionDiv(idChampionship,categoryChampionship){
   $("#titleInscription").html("Inscripción al Campeonato N"+idChampionship);
   $('#inscriptions').show();
 }
+
+function hello(){
+  var firstName;
+  $.ajax({
+          url:'/current',
+          type:'GET',
+          contentType: 'application/json',
+          dataType:'json',
+          async: false,
+          success: function(response){
+              firstName = response.firstName;
+            },
+          error: function(response){
+              alert(JSON.stringify(response));
+          }
+});
+  $('#Hello').html("¡Hola " + firstName + "!");
+}
+
 
 function sailingLoadData(idChampionship){
     $.ajax({
@@ -156,13 +177,10 @@ function soccerLoadData(idChampionship){
         });
 }
 
-
-
 function cancel_inscription(){
   $('#inscriptions').hide();
   $('#principal_page').show();
 }
-
 
 function culqi() {
   if (Culqi.token) { // ¡Objeto Token creado exitosamente!

@@ -22,7 +22,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    return render_template('index.html')
+    if 'logged_user' in session:
+        return render_template('index.html')
+    else:
+        return render_template('login.html')
 
 @app.route('/static/<content>')
 def static_content(content):
@@ -73,7 +76,7 @@ def current_user():
 @app.route('/logout', methods = ['GET'])
 def logout():
     session.clear()
-    return render_template('index.html')
+    return render_template('login.html')
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - -  C R E A T E - U S E R - - - - -  - #
@@ -83,25 +86,22 @@ def logout():
 def register():
     return render_template('register.html')
 
+
 @app.route('/createUser', methods = ["POST"])
 def createUser():
     message = json.loads(request.data)
-    try:
-        hashed_password = generate_password_hash(message['password'], method='sha256')
-        user = entities.Users(
-        firstName=message['firstName'],
-        lastName=message['lastName'],
-        password=hashed_password,
-        email=message['email']
-        )
-        session = db.getSession(engine)
-        session.add(user)
-        session.commit()
-        message = {'message': 'User Created'}
-        return Response(message, status=200, mimetype='application/json')
-    except Exception:
-        message = {'message': 'Error'}
-        return Response(message, status=401, mimetype='application/json')
+    hashed_password = generate_password_hash(message['password'], method='sha256')
+    user = entities.Users(
+    firstName=message['firstName'],
+    lastName=message['lastName'],
+    password=hashed_password,
+    email=message['email']
+    )
+    session = db.getSession(engine)
+    session.add(user)
+    session.commit()
+    message = {'message': 'User Created'}
+    return Response(message, status=200, mimetype='application/json')
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - -  C R U D - U S E R S  - - - - - - #
