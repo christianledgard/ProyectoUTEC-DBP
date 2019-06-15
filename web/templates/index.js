@@ -16,7 +16,10 @@ function refreshPage(){
                     a=a+'</div>';
                     a=a+'<div class="card-body">';
                     a=a+'<div class="text-center">';
-                    a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/soccer.jpg')}}" alt="">';
+                    if (response[i].category=='sailing')
+                        a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/soccer.jpg')}}" alt="">';
+                    if (response[i].category=='soccer')
+                        a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/soccer.jpg')}}" alt="">';
                     a=a+'</div>';
                     a=a+'<div class="text-left">';
                     a=a+'<p> <b>Fecha: </b>'+ response[i].startDate +' al '+ response[i].endDate +'</p>';
@@ -50,6 +53,7 @@ function showInscriptionDiv(idChampionship,categoryChampionship){
             $("#firstCondition").html("Número de Vela");
             $("#secondCondition").html("Tipo de vela");
             $('#insOK').attr('onclick', 'sailingLoadData('+idChampionship+')');
+            $('#secondInput').empty();
             $('#secondInput').append('<option>Radial</option><option>4.7</option><option>Standard</option>');
   }
   if (categoryChampionship=='soccer')
@@ -57,6 +61,7 @@ function showInscriptionDiv(idChampionship,categoryChampionship){
             $("#firstCondition").html("Peso en kg");
             $("#secondCondition").html("Equipo");
             $('#insOK').attr('onclick', 'soccerLoadData('+idChampionship+')');
+            $('#secondInput').empty();
             $('#secondInput').append('<option>Masculino</option><option>Femenino</option>');
   }
   $("#titleInscription").html("Inscripción al Campeonato N"+idChampionship);
@@ -96,6 +101,17 @@ function hello(){
 }
 
 
+function RealizarPago(title,description,amount) {
+  Culqi.publicKey = 'pk_test_Y0h5TrhXCsJnfJ9C';
+  Culqi.settings({
+    title: title,
+    currency: 'PEN',
+    description: description,
+    amount: amount
+  });
+  Culqi.open();
+}
+
 function sailingLoadData(idChampionship){
     $.ajax({
             url:'/current',
@@ -123,6 +139,7 @@ function sailingLoadData(idChampionship){
                             "user_id": idUser,
                             "championship_id": idChampionship
                         });
+
                 $.ajax({
                         url:'/loadSailData',
                         type:'POST',
@@ -136,11 +153,18 @@ function sailingLoadData(idChampionship){
                           if(response["status"]==401){
                                 alert(JSON.stringify("FAIL"));
                                 }else{
-                          alert("Inscripción realizada con éxito");
-                          window.location.href = "http://0.0.0.0:8020";
                                     }
                         }
                     });
+
+                    $.ajax({
+                            url:'/championship',
+                            type:'GET',
+                            contentType: 'application/json',
+                            dataType:'json',
+                            success: function(response){
+                              RealizarPago(response[idChampionship-1]['title'],"Realiza el pago del "+ response[idChampionship-1]['title']+" a desarollarse en "+ response[idChampionship-1]['location'],response[idChampionship-1]['price']);
+                            }});
             }
         });
 }
@@ -181,12 +205,18 @@ function soccerLoadData(idChampionship){
                         error: function(response){
                           if(response["status"]==401){
                                 alert(JSON.stringify("FAIL :("));
-                                 }else{
-                                alert("Inscripción realizada con éxito");
-                                window.location.href = "http://0.0.0.0:8020";
-                                            }
+                                 }else{}
                         }
                     });
+
+                    $.ajax({
+                            url:'/championship',
+                            type:'GET',
+                            contentType: 'application/json',
+                            dataType:'json',
+                            success: function(response){
+                              RealizarPago(response[idChampionship-1]['title'],"Realiza el pago del "+ response[idChampionship-1]['title']+" a desarollarse en "+ response[idChampionship-1]['location'],response[idChampionship-1]['price']);
+                            }});
             }
         });
 }
@@ -221,7 +251,7 @@ function paymentsPOST(token) {
         data: message,
         dataType: 'json',
         success: function (response) {
-            alert(JSON.stringify(response));
+            alert("Su inscripción y el pago se han realizado con éxito.");
         },
         error: function (response) {
             alert(JSON.stringify(response));}

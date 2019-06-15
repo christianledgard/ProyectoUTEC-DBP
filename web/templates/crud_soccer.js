@@ -1,6 +1,7 @@
 $(function(){
     var url = "http://0.0.0.0:8020/soccer";
-
+    var urlUsers = "http://0.0.0.0:8020/users";
+    var urlChampionship = "http://0.0.0.0:8020/championship";
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
@@ -32,15 +33,42 @@ $(function(){
         columns: [{
             dataField: "id",
             dataType: "number",
-            allowEditing: false
+            allowEditing: false,
+            caption: "Code",
         }, {
-            dataField: "soccerTeam"
+            dataField: "soccerTeam",
+            caption: "Team"
         }, {
-            dataField: "category"
+            dataField: "category",
+            caption: "Category",
         }, {
-            dataField: "user_id"
+            dataField: "user_id",
+            caption: "User",
+            lookup: {
+                dataSource: DevExpress.data.AspNet.createStore({
+                    key: "id",
+                    loadUrl: urlUsers ,
+                    onBeforeSend: function(method, ajaxOptions) {
+                        ajaxOptions.xhrFields = { withCredentials: true };
+                    }
+                }),
+                displayExpr: "email",
+                valueExpr: "id"
+            }
         }, {
-            dataField: "championship_id"
+          dataField: "championship_id",
+          caption: "Championship",
+          lookup: {
+              dataSource: DevExpress.data.AspNet.createStore({
+                  key: "id",
+                  loadUrl: urlChampionship ,
+                  onBeforeSend: function(method, ajaxOptions) {
+                      ajaxOptions.xhrFields = { withCredentials: true };
+                  }
+              }),
+              displayExpr: "title",
+              valueExpr: "id"
+          }
         } ]
     }).dxDataGrid("instance");
 });
