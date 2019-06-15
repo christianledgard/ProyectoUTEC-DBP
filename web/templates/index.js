@@ -9,7 +9,7 @@ function refreshPage(){
             success: function(response){
                 var i = 0;
                 $.each(response, function(){
-                    a='<div class="row">';
+                    a='<div width="70%">';
                     a=a+'<div class="card shadow mb-4">';
                     a=a+'<div class="card-header py-3">';
                     a=a+'<h6 class="m-0 font-weight-bold text-primary">'+response[i].title+'</h6>';
@@ -19,10 +19,10 @@ function refreshPage(){
                     a=a+'<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{url_for('static', filename = 'img/soccer.jpg')}}" alt="">';
                     a=a+'</div>';
                     a=a+'<div class="text-left">';
-                    a=a+'<p> <b>Fecha:</b>'+ response[i].startDate +' al '+ response[i].endDate +'</p>';
+                    a=a+'<p> <b>Fecha: </b>'+ response[i].startDate +' al '+ response[i].endDate +'</p>';
                     //a=a+'<p> <b>Numero Máximo de Competidores:</b>'+ response[i].maxCompetitors'</p>';
                     a=a+'</div>';
-                    a=a+'<p>'+response[i].description+'</p>';
+                    a=a+'<p align="justify">'+response[i].description+'</p>';
                     a=a+'<div>';
                     a=a+'<a target="_blank" href="https://undraw.co/">Documentos de Interés&rarr;</a>';
                     a=a+'</div>';
