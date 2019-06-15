@@ -18,8 +18,6 @@ db = connector.Manager()
 engine = db.createEngine()
 app = Flask(__name__)
 
-
-
 @app.route('/')
 def main():
     if 'logged_user' in session:

@@ -66,6 +66,7 @@ function showInscriptionDiv(idChampionship,categoryChampionship){
 function hello(){
   var firstName;
   var lastName;
+  var isAdmin;
   $.ajax({
           url:'/current',
           type:'GET',
@@ -75,11 +76,26 @@ function hello(){
           success: function(response){
               firstName = response.firstName;
               lastName = response.lastName;
+              isAdmin = response.isAdmin;
+              if (isAdmin==true)
+              {
+
+              }
             },
           error: function(response){
               alert(JSON.stringify(response));
           }
-});
+    });
+  if (isAdmin==true)
+    {
+        $('#admin_att1').show();
+        $('#admin_att2').show();
+        $('#admin_att3').show();
+        $('#admin_att4').show();
+        $('#admin_att5').show();
+        $('#admin_att6').show();
+        $('#admin_att7').show();
+    }
   $('#Hello').html("¡Hola " + firstName + "!");
   $('#Profile').html(firstName + " " + lastName);
 }
