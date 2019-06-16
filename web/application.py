@@ -16,7 +16,7 @@ import json
 
 db = connector.Manager()
 engine = db.createEngine()
-app = Flask(__name__)
+application = app = Flask(__name__)
 
 @app.route('/')
 def main():
@@ -27,7 +27,7 @@ def main():
 
 @app.route('/static/<content>')
 def static_content(content):
-    if content[0:4]=="crud":
+    if content[0:4]=="crud" or content=="index.html":
         try:
             currentID = session['logged_user']
             db_session = db.getSession(engine)
@@ -538,4 +538,4 @@ def inscripcion():
 
 if __name__ == '__main__':
     app.secret_key = ".."
-    app.run(debug=True,port=8020, threaded=True, host=('0.0.0.0'))
+    app.run()
