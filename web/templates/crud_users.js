@@ -1,5 +1,5 @@
 $(function(){
-    var url = "http://0.0.0.0:8020/users";
+    var url = "http://127.0.0.1:5000/users";
     var lookupData = [
     { id: true, show: "Administrador" },
     { id: false, show: "Usuario" },];

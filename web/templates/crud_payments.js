@@ -1,5 +1,5 @@
 $(function(){
-    var url = "http://0.0.0.0:8020/payments";
+    var url = "http://127.0.0.1:5000/payments";
 
 
     $("#grid").dxDataGrid({
