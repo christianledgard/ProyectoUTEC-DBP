@@ -17,6 +17,7 @@ import json
 db = connector.Manager()
 engine = db.createEngine()
 application = app = Flask(__name__)
+application.secret_key = 'esta es una llave secreta'
 
 @app.route('/')
 def main():
@@ -535,7 +536,6 @@ def inscripcion():
     return render_template('form1.html')
 
 
-
 if __name__ == '__main__':
-    app.secret_key = ".."
-    app.run()
+    application.debug = True
+    application.run(host='127.0.0.1', debug=True)
