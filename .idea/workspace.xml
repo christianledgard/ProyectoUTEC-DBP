@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984f69bb-c842-4c3f-bd98-7e7eba7699f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Archive.zip" beforeDir="false" afterPath="$PROJECT_DIR$/web/Archive.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/DB.db" beforeDir="false" afterPath="$PROJECT_DIR$/web/DB.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -342,12 +336,12 @@
       <workItem from="1560659839912" duration="45000" />
       <workItem from="1560659887189" duration="416000" />
       <workItem from="1560663145845" duration="25000" />
-      <workItem from="1560663205814" duration="6664000" />
+      <workItem from="1560663205814" duration="6943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57009000" />
+    <option name="totallyTimeSpent" value="57288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="736" extended-state="0" />
@@ -358,7 +352,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49192247" visible="true" weight="0.2810559" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49192247" weight="0.2810559" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
