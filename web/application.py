@@ -43,6 +43,94 @@ def static_content(content):
     else:
         return render_template(content)
 
+# - - - - - - - - - - - - - - - - - - - - - - - #
+# - - - - - - D E V - E X T R E M E - - - - - - #
+# - - - - - - - - - - - - - - - - - - - - - - - #
+
+@app.route('/crud/championship')
+def crud_championship():
+    try:
+        currentID = session['logged_user']
+        db_session = db.getSession(engine)
+        user = db_session.query(entities.Users).filter(entities.Users.id == currentID).one()
+        if user.isAdmin:
+            return render_template('crud_championship.html')
+        else:
+            raise Exception
+    except Exception:
+        session.clear()
+        return render_template('login.html')
+
+@app.route('/crud/notification')
+def crud_notification():
+    try:
+        currentID = session['logged_user']
+        db_session = db.getSession(engine)
+        user = db_session.query(entities.Users).filter(entities.Users.id == currentID).one()
+        if user.isAdmin:
+            return render_template('crud_notifications.html')
+        else:
+            raise Exception
+    except Exception:
+        session.clear()
+        return render_template('login.html')
+
+@app.route('/crud/payments')
+def crud_payments():
+    try:
+        currentID = session['logged_user']
+        db_session = db.getSession(engine)
+        user = db_session.query(entities.Users).filter(entities.Users.id == currentID).one()
+        if user.isAdmin:
+            return render_template('crud_payments.html')
+        else:
+            raise Exception
+    except Exception:
+        session.clear()
+        return render_template('login.html')
+
+@app.route('/crud/sailing')
+def crud_sailing():
+    try:
+        currentID = session['logged_user']
+        db_session = db.getSession(engine)
+        user = db_session.query(entities.Users).filter(entities.Users.id == currentID).one()
+        if user.isAdmin:
+            return render_template('crud_sailing.html')
+        else:
+            raise Exception
+    except Exception:
+        session.clear()
+        return render_template('login.html')
+
+@app.route('/crud/soccer')
+def crud_soccer():
+    try:
+        currentID = session['logged_user']
+        db_session = db.getSession(engine)
+        user = db_session.query(entities.Users).filter(entities.Users.id == currentID).one()
+        if user.isAdmin:
+            return render_template('crud_soccer.html')
+        else:
+            raise Exception
+    except Exception:
+        session.clear()
+        return render_template('login.html')
+
+@app.route('/crud/users')
+def crud_users():
+    try:
+        currentID = session['logged_user']
+        db_session = db.getSession(engine)
+        user = db_session.query(entities.Users).filter(entities.Users.id == currentID).one()
+        if user.isAdmin:
+            return render_template('crud_users.html')
+        else:
+            raise Exception
+    except Exception:
+        session.clear()
+        return render_template('login.html')
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - #
 # - - - - - - - - - L O G I N - - - - - - - - - #

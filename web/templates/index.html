@@ -76,7 +76,7 @@
 
 
       <li class="nav-item" id="adminAtt1" style="display:none">
-        <a class="nav-link" href="/static/crud_championship.html">
+        <a class="nav-link" href="/crud/championship">
           <i class="fas fa-fw fa-cog"></i>
           <span>Crear Campeonato</span></a>
       </li>
@@ -90,8 +90,8 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Usuarios inscritos en:</h6>
-            <a class="collapse-item" href="/static/crud_sailing.html">Vela</a>
-            <a class="collapse-item" href="/static/crud_soccer.html">Fútbol</a>
+            <a class="collapse-item" href="/crud/sailing">Vela</a>
+            <a class="collapse-item" href="/crud/soccer">Fútbol</a>
           </div>
         </div>
       </li>
@@ -104,9 +104,9 @@
         <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Administration Tools</h6>
-            <a class="collapse-item" href="/static/crud_users.html">Manage Users</a>
-            <a class="collapse-item" href="/static/crud_notifications.html">Manage Notifications</a>
-            <a class="collapse-item" href="/static/crud_payments.html">Manage Payments</a>
+            <a class="collapse-item" href="/crud/users">Manage Users</a>
+            <a class="collapse-item" href="/crud/notification">Manage Notifications</a>
+            <a class="collapse-item" href="/crud/payments">Manage Payments</a>
 
           </div>
         </div>
@@ -227,7 +227,7 @@
             <h1 class="h3 mb-0 text-gray-800" id="Hello"></h1>
             <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
           </div>
-          <img id ="loader" src="/static/img/loader.gif"></img>
+          <img id ="loader" src="/static/img/loader.gif" style="float: left"></img>
           <!-- Content Row -->
           <div id="posts" class="col-lg-6 mb-4" style="float: left">
           </div>
@@ -350,6 +350,26 @@
       </div>
     </div>
   </div>
+
+
+  <!-- Inscription Realizada Correctamente-->
+  <div class="modal fade" id="inscriptionOkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¡Inscripción Realizada!</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">La inscripción se ha realizado correctamente. 😁 </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" href="/" type="button" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Bootstrap core JavaScript-->
 

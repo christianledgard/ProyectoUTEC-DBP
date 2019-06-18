@@ -253,6 +253,7 @@ function culqi() {
   }
 };
 
+
 function paymentsPOST(token) {
     var message = JSON.stringify({
         "paymentToken": token,
@@ -267,9 +268,13 @@ function paymentsPOST(token) {
         dataType: 'json',
         success: function (response) {
             alert("Su inscripción y el pago se han realizado con éxito.");
+            window.location.href = "http://18.231.72.26/";
         },
         error: function (response) {
-            alert(JSON.stringify(response));}
+            alert(JSON.stringify(response));
+            window.location.href = "http://18.231.72.26/";
+
+          }
         });
         }
 
