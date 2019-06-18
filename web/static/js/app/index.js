@@ -9,7 +9,7 @@ function refreshPage(){
             success: function(response){
                 var i = 0;
                 $.each(response, function(){
-                    a='<div width="70%">';
+                    a='<div width="70%" style="float: left">';
                     a=a+'<div class="card shadow mb-4">';
                     a=a+'<div class="card-header py-3">';
                     a=a+'<h6 class="m-0 font-weight-bold text-primary">'+response[i].title+'</h6>';

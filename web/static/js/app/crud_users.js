@@ -2,7 +2,7 @@ $(function(){
     var url = "http://18.231.72.26/users";
     var lookupData = [
     { id: true, show: "Administrador" },
-    { id: false, show: "Usuario" },];
+    { id: false, show: "Usuario" }];
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({

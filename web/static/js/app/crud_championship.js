@@ -2,7 +2,7 @@ $(function(){
     var url = "http://18.231.72.26/championship";
     var lookupData = [
     { id: "sailing", show: "sailing" },
-    { id: "soccer", show: "soccer" },];
+    { id: "soccer", show: "soccer" }];
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({

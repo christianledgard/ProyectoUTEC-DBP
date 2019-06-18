@@ -150,7 +150,7 @@ def update_users():
     session = db.getSession(engine)
     id = request.form['key']
     user = session.query(entities.Users).filter(entities.Users.id == id).first()
-    c =  json.loads(request.form['values'])
+    c = json.loads(request.form['values'])
     for key in c.keys():
         setattr(user, key, c[key])
     session.add(user)
@@ -322,7 +322,7 @@ def delete_sailing():
 @app.route('/soccer', methods = ['POST'])
 def post_soccer():
     j = json.loads(request.form['values'])
-    inscripcion = entities.InscriptionSoccer(
+    inscription = entities.InscriptionSoccer(
         soccerTeam=j['soccerTeam'],
         category=j['category'],
         user_id=j['user_id'],
@@ -390,6 +390,7 @@ def load_sail():
     except Exception:
         message = {'message': 'Error'}
         return Response(message, status=401, mimetype='application/json')
+
 
 #Soccer
 @app.route('/loadSoccerData', methods = ["POST"])
