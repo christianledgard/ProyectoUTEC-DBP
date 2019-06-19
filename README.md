@@ -4,10 +4,10 @@
 
 | Integrantes      |  Participación  |
 |------------------|-----------------|
-|Christian Ledgard |   25%           |
-|Carlos Reategui   |   25%           |
-|Macarena Oyague   |   25%           |
-|Juan Galvez       |   25%           |
+|Christian Ledgard |   30%           |
+|Carlos Reategui   |   22.5%         |
+|Macarena Oyague   |   27.5%         |
+|Juan Galvez       |   20%           |
   
     
  ## Instrucciones de uso :
