@@ -27,7 +27,7 @@ function refreshPage(){
                     a=a+'</div>';
                     a=a+'<p align="justify">'+response[i].description+'</p>';
                     a=a+'<div>';
-                    a=a+'<a target="_blank" href="https://undraw.co/">Documentos de Interés&rarr;</a>';
+                    a=a+'<p><strong>Costo de Inscripción: S/ </strong>'+response[i].price+'</p>';
                     a=a+'</div>';
                     a=a+'<br>';
                     a=a+'<div class="text-right">';
