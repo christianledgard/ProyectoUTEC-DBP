@@ -1,27 +1,23 @@
-# ProyectoUTEC-DBP
-### Easy Sport
+# Easy Sport - Proyecto WEB-UTEC-DBP
 
-    Integrantes : 
-    Cristian Ledgard
-    Carlos Reategui
-    Macarena Oyague
-    Juan Galvez
+## Integrantes: 
+
+| Integrantes      |  Participación  |
+|------------------|-----------------|
+|Christian Ledgard |   25%           |
+|Carlos Reategui   |   25%           |
+|Macarena Oyague   |   25%           |
+|Juan Galvez       |   25%           |
+  
     
- ****
-    Instrucciones de uso :
-    
-    1.- Si estas registrado te logueas con tu cuenta, caso contrario, te creas una.
-    
-    2.- Una vez en la página principal se tiene que decidir a que campeonato te quieres inscribir. 
-        Estos campeonatos son dos, de vela y de futbol.
-       
-        2.1.- Si te decidiste por el campeonato de vela, vas a tener que añadir el numero de vela 
-              y seleccionar el tipo de vela, acto seguido  aceptar "Términos y Condiciones" 
-              y proceder con el pago para completar la inscripción.
-        
-        2.2-  Si te decidiste por el campeonato de fútbol, vas a tener que añadir tu peso 
-              y seleccionar tu equipo, acto seguido  aceptar "Términos y Condiciones" 
-              y proceder con el pago para completar la inscripción.
-        
-* El usuario puede ser administrador para crear eventos deportivos pero no es necesario ya que,
-nosotros se lo facilitamos.
+ ## Instrucciones de uso :
+ ### Usuario Regular
+ 1. Ingresar a la [applicación](http://18.231.72.26/) desde tu navegador de preferencia.
+ 2. Si usted está registrado, deberá ingresar su correo electrónico y contraseña. De lo contrario, podrá crearse una cuenta haciendo click en "[¡Crear una cuenta!](http://18.231.72.26/register)".
+ 3. Una vez en la página principal usted podrá visualizar todos los campeonatos disponibles para la debida inscripción. Encuentre un campeonato de su preferencia y seleccione "Inscribirse Aquí" para proceder con la inscripción.
+ 4.  En caso usted seleccione un campeonato de vela, tendrá que registrar su numero y  tipo de vela para proceder con la inscripción, para finalmente realizar el pago por nuestra pasarela de pagos "Culqui".
+ 5. En caso usted seleccione un campeonato de fútbol, tendrá que registrar su peso y seleccionar su sexo para proceder con la inscripción, para finalmente realizar el pago por nuestra pasarela de pagos "Culqui".
+ 
+### Usuario Administrador
+* El usuario administrador tendrá privilegios en la creación de nuevos campeonatos, notificaciones y gestión de usuarios inscritos a los campeonatos de Vela y Futbol.
+* Solo otro administrador de la cuenta podrá otorgarle beneficios de administración a otro usuario. 
