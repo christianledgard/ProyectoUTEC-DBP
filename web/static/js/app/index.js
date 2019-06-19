@@ -9,7 +9,7 @@ function refreshPage(){
             success: function(response){
                 var i = 0;
                 $.each(response, function(){
-                    a='<div width="70%" style="float: left">';
+                    a='<div class="col-lg-6">';
                     a=a+'<div class="card shadow mb-4">';
                     a=a+'<div class="card-header py-3">';
                     a=a+'<h6 class="m-0 font-weight-bold text-primary">'+response[i].title+'</h6>';
@@ -35,7 +35,7 @@ function refreshPage(){
                     a=a+'<span class="icon text-white-50">';
                     a=a+'<i class="fas fa-check"></i>';
                     a=a+'</span>';
-                    a=a+'<button class="text" onclick=showInscriptionDiv('+response[i].id+','+"'"+response[i].category+"'"+')>Inscribete Aquí</button>';
+                    a=a+'<span class="text" onclick=showInscriptionDiv('+response[i].id+','+"'"+response[i].category+"'"+')>Inscribete Aquí</span>';
                     a=a+'</div></div></div></div></div></div>';
                     $('#posts').append(a);
                     i = i +  1;
