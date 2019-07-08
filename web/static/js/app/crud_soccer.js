@@ -1,7 +1,7 @@
 $(function(){
-    var url = "http://18.231.72.26/soccer";
-    var urlUsers = "http://18.231.72.26/users";
-    var urlChampionship = "http://18.231.72.26/championship";
+    var url = "http://127.0.0.1:8080/soccer";
+    var urlUsers = "http://127.0.0.1:8080/users";
+    var urlChampionship = "http://127.0.0.1:8080/championship";
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
