@@ -160,6 +160,29 @@ def authenticate():
         message = {'message': 'Unauthorized'}
         return Response(message, status=401, mimetype='application/json')
 
+@app.route('/mobile/authenticate', methods = ["POST"])
+def authenticateMobile():
+    message = json.loads(request.data)
+    email = message['email']
+    password = message['password']
+    #2. look in database
+    db_session = db.getSession(engine)
+    try:
+        user = db_session.query(entities.Users).filter(entities.Users.email == email).one()
+        session['logged_user']=user.id
+        if check_password_hash(user.password, password):
+            message = {'message': 'Authorized'}
+            message = json.dumps(message, cls=connector.AlchemyEncoder)
+            return Response(message, status=200, mimetype='application/json')
+        else:
+            message = {'message': 'Unauthorized'}
+            message = json.dumps(message, cls=connector.AlchemyEncoder)
+            return Response(message, status=401, mimetype='application/json')
+    except Exception:
+        message = {'message': 'Unauthorized'}
+        message = json.dumps(message, cls=connector.AlchemyEncoder)
+        return Response(message, status=401, mimetype='application/json')
+
 #current
 @app.route('/current', methods = ['GET'])
 def current_user():
@@ -217,6 +240,17 @@ def get_users():
     for user in dbResponse:
         data.append(user)
     return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+@app.route('/mobile/users', methods = ['GET'])
+def get_usersMobile():
+    session = db.getSession(engine)
+    dbResponse = session.query(entities.Users)
+    data = []
+    for user in dbResponse:
+        data.append(user)
+    message = {'data' : data}
+    return Response(json.dumps(message, cls=connector.AlchemyEncoder), mimetype='application/json')
+
 
 @app.route('/users', methods = ['POST'])
 def post_users():
