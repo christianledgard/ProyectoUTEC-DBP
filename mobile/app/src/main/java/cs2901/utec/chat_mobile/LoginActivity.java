@@ -17,7 +17,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import android.content.Intent;
-import org.json.JSONException;
 import android.view.View;
 
 
@@ -39,15 +38,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onBtnLoginClicked(View view) {
-        // 1. Getting username and password inputs from view
-        EditText txtUsername = (EditText) findViewById(R.id.txtUsername);
+        // 1. Getting email and password inputs from view
+        EditText txtEmail = (EditText) findViewById(R.id.txtEmail);
         EditText txtPassword = (EditText) findViewById(R.id.txtPassword);
-        String username = txtUsername.getText().toString();
+        String email = txtEmail.getText().toString();
         String password = txtPassword.getText().toString();
 
         // 2. Creating a message from user input data
         Map<String, String> message = new HashMap<>();
-        message.put("username", username);
+        message.put("email", email);
         message.put("password", password);
 
         // 3. Converting the message object to JSON string (jsonify)
@@ -66,13 +65,13 @@ public class LoginActivity extends AppCompatActivity {
                         String message = response.getString("message");
                         if(message.equals("Authorized")) {
                             showMessage("Authenticated");
-                            Intent intent = new Intent(getActivity(), ContactsActivity.class);
+                            Intent intent = new Intent(getActivity(), ChampionshipActivity.class);
                             intent.putExtra("user_id", response.getInt("user_id"));
-                            intent.putExtra("username", response.getString("username"));
+                            intent.putExtra("email", response.getString("email"));
                             startActivity(intent);
                         }
                         else {
-                            showMessage("Wrong username or password");
+                            showMessage("Wrong email or password");
                         }
                         showMessage(response.toString());
                     }catch (Exception e) {

@@ -171,7 +171,7 @@ def authenticateMobile():
         user = db_session.query(entities.Users).filter(entities.Users.email == email).one()
         session['logged_user']=user.id
         if check_password_hash(user.password, password):
-            message = {'message': 'Authorized'}
+            message = {'message': 'Authorized', 'user_id':user.id, 'email':user.email}
             message = json.dumps(message, cls=connector.AlchemyEncoder)
             return Response(message, status=200, mimetype='application/json')
         else:
@@ -357,6 +357,16 @@ def get_championship():
     for championship in dbResponse:
         data.append(championship)
     return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+@app.route('/mobile/championship', methods = ['GET'])
+def get_championshipMobile():
+    session = db.getSession(engine)
+    dbResponse = session.query(entities.Championship)
+    data = []
+    for championship in dbResponse:
+        data.append(championship)
+    message = {'data':data}
+    return Response(json.dumps(message, cls=connector.AlchemyEncoder), mimetype='application/json')
 
 #update championship
 @app.route('/championship', methods = ['PUT'])

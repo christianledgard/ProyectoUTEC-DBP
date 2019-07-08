@@ -1,7 +1,6 @@
 package cs2901.utec.chat_mobile;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,7 +19,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-public class ContactsActivity extends AppCompatActivity {
+public class ChampionshipActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     RecyclerView.Adapter mAdapter;
@@ -30,7 +29,7 @@ public class ContactsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
         mRecyclerView = findViewById(R.id.main_recycler_view);
-        setTitle("@"+getIntent().getExtras().get("username").toString());
+        setTitle("Selecciona el campeonato a inscribirte");
     }
 
     @Override
@@ -46,8 +45,8 @@ public class ContactsActivity extends AppCompatActivity {
 
     public void getUsers(){
 
-        final String userId = getIntent().getExtras().get("user_id").toString();
-        String url = "http://10.0.2.2:8080/mobile/user/allExcept/"+ userId;
+        //final String userId = getIntent().getExtras().get("user_id").toString();
+        String url = "http://10.0.2.2:8080/mobile/championship";
         RequestQueue queue = Volley.newRequestQueue(this);
         Map<String, String> params = new HashMap();
         JSONObject parameters = new JSONObject(params);
@@ -60,7 +59,7 @@ public class ContactsActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray data = response.getJSONArray("data");
-                            mAdapter = new ChatAdapter(data, getActivity(), userId);
+                            mAdapter = new MyChampionshipAdapter(data, getActivity());
                             mRecyclerView.setAdapter(mAdapter);
 
                         }catch (JSONException e) {

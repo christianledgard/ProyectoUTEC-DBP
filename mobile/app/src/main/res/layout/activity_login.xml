@@ -24,12 +24,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CSB01 CHAT"/>
+                android:text="Easy Sport"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="201710403 - Christian Ledgard"/>
+                android:text=":)"/>
 
         </LinearLayout>
 
@@ -40,15 +40,16 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/lblUsername"
+                android:id="@+id/lblEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"/>
+                android:text="Email"/>
+
             <EditText
-                android:id="@+id/txtUsername"
+                android:id="@+id/txtEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"/>
+                android:ems="10" />
         </LinearLayout>
 
         <LinearLayout

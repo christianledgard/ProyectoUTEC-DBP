@@ -15,15 +15,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
+public class MyChampionshipAdapter extends RecyclerView.Adapter<MyChampionshipAdapter.ViewHolder> {
     public JSONArray elements;
     private Context context;
     public String userFromId;
 
-    public ChatAdapter(JSONArray elements, Context context, String userFromId){
+    public MyChampionshipAdapter(JSONArray elements, Context context){
         this.elements = elements;
         this.context = context;
-        this.userFromId = userFromId;
+        //this.userFromId = userFromId;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -40,33 +40,47 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
     @NonNull
     @Override
-    public ChatAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyChampionshipAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.element_view,parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ChatAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         try {
             JSONObject element = elements.getJSONObject(position);
-            String name = element.getString("name")+" "+element.getString("lastname");
-            final String username = element.getString("username");
+            String subtitle = element.getString("category")+" - "+element.getString("location");
+            subtitle = subtitle.substring(0,1).toUpperCase() + subtitle.substring(1);
+            final String title = element.getString("title");
             final String id = element.getString("id");
-            holder.first_line.setText(name);
-            holder.second_line.setText(username);
+            final String category = element.getString("category");
+            final String description = element.getString("description");
+            final String endDate = element.getString("endDate");
+            final String location = element.getString("location");
+            final String maxCompetitors = element.getString("maxCompetitors");
+            final String price = element.getString("price");
+            final String startDate = element.getString("startDate");
+            holder.first_line.setText(title);
+            holder.second_line.setText(subtitle);
 
             holder.container.setOnClickListener(new View.OnClickListener(){
 
                 @Override
                 public void onClick(View v) {
                     Intent goToMessage = new Intent(context,MessageActivity.class);
-                    goToMessage.putExtra("user_from_id",userFromId);
-                    goToMessage.putExtra("user_to_id",id);
-                    goToMessage.putExtra("username", username);
+                    goToMessage.putExtra("id", id);
+                    goToMessage.putExtra("category", category);
+                    goToMessage.putExtra("description", description);
+                    goToMessage.putExtra("endDate", endDate);
+                    goToMessage.putExtra("location", location);
+                    goToMessage.putExtra("maxCompetitors", maxCompetitors);
+                    goToMessage.putExtra("price", price);
+                    goToMessage.putExtra("startDate", startDate);
+                    goToMessage.putExtra("title", title);
                     context.startActivity(goToMessage);
                 }
-            });
 
+            });
 
         } catch (JSONException e) {
             e.printStackTrace();

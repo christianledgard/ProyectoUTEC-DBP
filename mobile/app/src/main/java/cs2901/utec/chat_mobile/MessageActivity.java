@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -35,39 +36,48 @@ public class MessageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
-        String username = getIntent().getExtras().get("username").toString();
-        setTitle("@"+username);
+        String title = getIntent().getExtras().get("title").toString();
+        String id = getIntent().getExtras().get("id").toString();
+        String category = getIntent().getExtras().get("category").toString();
+        String description = getIntent().getExtras().get("description").toString();
+        String endDate = getIntent().getExtras().get("endDate").toString();
+        String location = getIntent().getExtras().get("location").toString();
+        String maxCompetitors = getIntent().getExtras().get("maxCompetitors").toString();
+        String price = getIntent().getExtras().get("price").toString();
+        String startDate = getIntent().getExtras().get("startDate").toString();
+        setTitle(title);
         mRecyclerView = findViewById(R.id.main_recycler_view);
+
+
+        final TextView textViewTitle = (TextView)findViewById(R.id.title);
+        final TextView textViewCategory = (TextView)findViewById(R.id.category);
+        final TextView textViewDescription = (TextView)findViewById(R.id.description);
+        final TextView textViewEndDate = (TextView)findViewById(R.id.endDate);
+        final TextView textViewStartDate = (TextView)findViewById(R.id.startDate);
+        final TextView textViewLocation = (TextView)findViewById(R.id.location);
+        final TextView textViewMaxCompetitors = (TextView)findViewById(R.id.maxCompetitors);
+        final TextView textViewPrice = (TextView)findViewById(R.id.price);
+
+
+        textViewTitle.setText(title);
+        textViewCategory.setText(category);
+        textViewDescription.setText(description);
+        textViewEndDate.setText(endDate);
+        textViewStartDate.setText(startDate);
+        textViewLocation.setText(location);
+        textViewMaxCompetitors.setText(maxCompetitors);
+        textViewPrice.setText(price);
+
+
     }
 
-    @Override
-    protected void onResume(){
-        super.onResume();
-
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        getChats();
-        Runnable runnable = new Runnable(){
-            @Override
-            public void run(){
-                while(true){
-                    try {
-                        Thread.sleep(6000);
-                        getChats();
-                    }
-                    catch (InterruptedException e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-        };
-        Thread hilo = new Thread(runnable);
-        hilo.start();
-    }
 
     public void onClickBtnSend(View v) {
-        postMessage();
+        //postMessage();
     }
 
+
+/*
     public void getChats(){
         final String userFromId = getIntent().getExtras().get("user_from_id").toString();
         String userToId = getIntent().getExtras().get("user_to_id").toString();
@@ -137,4 +147,5 @@ public class MessageActivity extends AppCompatActivity {
         EditText editTextSend = (EditText)findViewById(R.id.txtMessage);
         editTextSend.setText("");
     }
+    */
 }
