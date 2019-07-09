@@ -76,7 +76,8 @@
           <files>
             <file path="$PROJECT_DIR$/web/DB.db" schema="main" />
           </files>
-          <type value="NONE" />
+          <os-authentication value="false" />
+          <empty-authentication value="false" />
           <user value="" />
           <deprecated-pwd value="" />
         </database>
@@ -114,7 +115,7 @@
           <max-connection-pool-size value="7" />
           <alternative-statement-delimiter value="" />
         </details>
-        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+        <object-filters hide-empty-schemas="false">
           <object-type-filter use-master-settings="true">
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
@@ -269,16 +270,12 @@
       <qualified-text-editor text-length-threshold="300">
         <content-types>
           <content-type name="Text" enabled="true" />
-          <content-type name="Properties" enabled="true" />
           <content-type name="XML" enabled="true" />
           <content-type name="DTD" enabled="true" />
           <content-type name="HTML" enabled="true" />
           <content-type name="XHTML" enabled="true" />
-          <content-type name="CSS" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />
-          <content-type name="JavaScript" enabled="true" />
-          <content-type name="YAML" enabled="true" />
         </content-types>
       </qualified-text-editor>
       <record-navigation>

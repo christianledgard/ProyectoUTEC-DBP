@@ -72,7 +72,7 @@ public class MessageActivity extends AppCompatActivity {
     }
 
 
-    public void onClickBtnSend(View v) {
+    public void onBtnInscription(View v) {
         //postMessage();
     }
 
