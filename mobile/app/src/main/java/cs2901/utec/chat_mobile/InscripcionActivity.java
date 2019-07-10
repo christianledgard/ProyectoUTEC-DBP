@@ -57,7 +57,7 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
         //String password = txtPassword.getText().toString();
 
 
-        String url = "http://10.0.2.2:8080/mobile/loadSailData";
+        String url = "http://18.228.148.139/mobile/loadSailData";
         RequestQueue queue = Volley.newRequestQueue(this);
         Map<String, String> params = new HashMap();
 

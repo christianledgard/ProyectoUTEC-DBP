@@ -692,4 +692,4 @@ def inscripcion():
 
 if __name__ == '__main__':
     application.debug = True
-    application.run(host='127.0.0.1', debug=True, port='8080')
+    application.run()

@@ -1,5 +1,5 @@
 $(function(){
-    var url = "http://127.0.0.1:8080/notifications";
+    var url = "http://18.228.148.139/notifications";
     var lookupData = [
     { id: "OK", show: "OK" },
     { id: "WARNING", show: "WARNING" },];
