@@ -1,4 +1,4 @@
-# Easy Sport - Proyecto WEB-UTEC-DBP
+# Easy Sport - Proyecto MOBILE-UTEC-DBP
 
 ## Información importante  
 En el caso de ejecutarlo desde local, se deberá modificar los ip de los archivos.  
@@ -12,10 +12,10 @@ En el caso de ejecutarlo desde local, se deberá modificar los ip de los archivo
 
 | Integrantes      |  Participación  |
 |------------------|-----------------|
-|Christian Ledgard |   30%           |
-|Carlos Reategui   |   22.5%         |
-|Macarena Oyague   |   27.5%         |
-|Juan Galvez       |   20%           |
+|Christian Ledgard |       25%       |
+|Carlos Reategui   |       25%       |
+|Macarena Oyague   |       25%       |
+|Juan Galvez       |       25%       |
   
     
  ## Instrucciones de uso 
