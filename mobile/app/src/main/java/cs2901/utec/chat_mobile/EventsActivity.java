@@ -115,7 +115,7 @@ public class EventsActivity extends AppCompatActivity {
         queue.add(request);
     }
 
-    public void postMessage(){
+    public void postInscription(){
         String url = "http://10.0.2.2:8080/newMesssage";
         RequestQueue queue = Volley.newRequestQueue(this);
         Map<String, String> params = new HashMap();

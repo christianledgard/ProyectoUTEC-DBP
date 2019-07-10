@@ -1,8 +1,6 @@
 package cs2901.utec.chat_mobile;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +8,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.android.volley.Request;
@@ -56,7 +53,7 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
                         "Yes",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                postMessage();
+                                postInscription();
                                 dialog.cancel();
 
                                 AlertDialog.Builder builder2 = new AlertDialog.Builder(InscripcionActivity.this);
@@ -97,7 +94,7 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
 
 
 
-    public void postMessage(){
+    public void postInscription(){
         EditText txtVela = (EditText) findViewById(R.id.et_numero_de_vela);
         //EditText txtPassword = (EditText) findViewById(R.id.spinner);
         String vela = txtVela.getText().toString();
@@ -152,6 +149,6 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View view) {
-        postMessage();
+        postInscription();
     }
 }
