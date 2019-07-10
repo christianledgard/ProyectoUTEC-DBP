@@ -38,6 +38,12 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
 
         numeroDeVela = findViewById(R.id.et_numero_de_vela);
         realizarInscripcion = findViewById(R.id.buttonRealizarInscripcion);
+
+        realizarInscripcion.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                postMessage();
+            }
+        });
     }
 
 
