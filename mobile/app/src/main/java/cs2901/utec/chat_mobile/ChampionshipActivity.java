@@ -36,14 +36,14 @@ public class ChampionshipActivity extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        getUsers();
+        getChampionships();
     }
 
     public Activity getActivity(){
         return this;
     }
 
-    public void getUsers(){
+    public void getChampionships(){
 
         //final String userId = getIntent().getExtras().get("user_id").toString();
         String url = "http://18.228.148.139/mobile/championship";
