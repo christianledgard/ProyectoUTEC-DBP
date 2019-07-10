@@ -28,6 +28,7 @@ public class MessageActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     RecyclerView.Adapter mAdapter;
+    String championship_id;
 
     public Activity getActivity(){
         return this;
@@ -38,7 +39,7 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
         String title = getIntent().getExtras().get("title").toString();
-        String id = getIntent().getExtras().get("id").toString();
+        championship_id = getIntent().getExtras().get("championship_id").toString();
         String category = getIntent().getExtras().get("category").toString();
         String description = getIntent().getExtras().get("description").toString();
         String endDate = getIntent().getExtras().get("endDate").toString();
@@ -72,6 +73,7 @@ public class MessageActivity extends AppCompatActivity {
 
     public void onBtnInscription(View v) {
         Intent intent = new Intent(this, InscripcionActivity.class);
+        intent.putExtra("championship_id", championship_id);
         startActivity(intent);
     }
 

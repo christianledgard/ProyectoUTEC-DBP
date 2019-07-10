@@ -56,6 +56,8 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
         String vela = txtVela.getText().toString();
         //String password = txtPassword.getText().toString();
 
+        final String championship_id = getIntent().getExtras().get("championship_id").toString();
+
 
         String url = "http://18.228.148.139/mobile/loadSailData";
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -71,12 +73,11 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
         //final String category = tipo_de_vela_spinner.toString();
         //final String championship_id = getIntent().getExtras().get("championship_id").toString();
         final String user_id  = "8";
-        final String championship_id = "4";
 
         params.put("sailingNumber", vela);
         params.put("category", category);
         params.put("user_id", "1");
-        params.put("championship_id", "1");
+        params.put("championship_id", championship_id);
 
         JSONObject parameters = new JSONObject(params);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(

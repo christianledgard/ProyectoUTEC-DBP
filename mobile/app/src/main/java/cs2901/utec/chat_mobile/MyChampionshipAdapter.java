@@ -52,7 +52,7 @@ public class MyChampionshipAdapter extends RecyclerView.Adapter<MyChampionshipAd
             String subtitle = element.getString("category")+" - "+element.getString("location");
             subtitle = subtitle.substring(0,1).toUpperCase() + subtitle.substring(1);
             final String title = element.getString("title");
-            final String id = element.getString("id");
+            final String championship_id = element.getString("id");
             final String category = element.getString("category");
             final String description = element.getString("description");
             final String endDate = element.getString("endDate");
@@ -67,7 +67,7 @@ public class MyChampionshipAdapter extends RecyclerView.Adapter<MyChampionshipAd
                 @Override
                 public void onClick(View v) {
                     Intent goToMessage = new Intent(context,MessageActivity.class);
-                    goToMessage.putExtra("id", id);
+                    goToMessage.putExtra("championship_id", championship_id);
                     goToMessage.putExtra("category", category);
                     goToMessage.putExtra("description", description);
                     goToMessage.putExtra("endDate", endDate);
