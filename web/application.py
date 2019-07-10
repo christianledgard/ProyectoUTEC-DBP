@@ -410,6 +410,8 @@ def post_sailing():
     session.commit()
     return 'Created Sailing Inscription'
 
+
+
 #read sailing
 @app.route('/sailing', methods = ['GET'])
 def get_sailing():
@@ -506,6 +508,25 @@ def delete_soccer():
 #Sailing
 @app.route('/loadSailData', methods = ["POST"])
 def load_sail():
+    message = json.loads(request.data)
+    try:
+        data = entities.InscriptionSailing(
+        sailingNumber=message['sailingNumber'],
+        category=message['category'],
+        user_id=message['user_id'],
+        championship_id=message['championship_id']
+        )
+        session = db.getSession(engine)
+        session.add(data)
+        session.commit()
+        message = {'message': 'User Created'}
+        return Response(message, status=200, mimetype='application/json')
+    except Exception:
+        message = {'message': 'Error'}
+        return Response(message, status=401, mimetype='application/json')
+
+@app.route('/mobile/loadSailData', methods = ["POST"])
+def load_sailMobile():
     message = json.loads(request.data)
     try:
         data = entities.InscriptionSailing(
@@ -671,4 +692,4 @@ def inscripcion():
 
 if __name__ == '__main__':
     application.debug = True
-    application.run(host='127.0.0.1', debug=True, port="8080")
+    application.run(host='127.0.0.1', debug=True, port='8080')
