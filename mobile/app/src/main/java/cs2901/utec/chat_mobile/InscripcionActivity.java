@@ -113,17 +113,17 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
 
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
         String category = spinner.getSelectedItem().toString();
-
+        final String user_id  = "1";
 
         //final String user_id = getIntent().getExtras().get("user_id").toString();
         //final String sailingNumber = numeroDeVela.toString();
         //final String category = tipo_de_vela_spinner.toString();
         //final String championship_id = getIntent().getExtras().get("championship_id").toString();
-        final String user_id  = "8";
+
 
         params.put("sailingNumber", vela);
         params.put("category", category);
-        params.put("user_id", "1");
+        params.put("user_id", user_id);
         params.put("championship_id", championship_id);
 
         JSONObject parameters = new JSONObject(params);
