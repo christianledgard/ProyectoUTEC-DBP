@@ -1,5 +1,9 @@
 package cs2901.utec.chat_mobile;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,9 +45,52 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
 
         realizarInscripcion.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                postMessage();
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(InscripcionActivity.this);
+
+                builder1.setMessage("¿Estás seguro que deseas realizar la inscripción?");
+                builder1.setCancelable(true);
+
+
+
+                builder1.setPositiveButton(
+                        "Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                postMessage();
+                                dialog.cancel();
+
+                                AlertDialog.Builder builder2 = new AlertDialog.Builder(InscripcionActivity.this);
+                                builder2.setMessage("Inscripción realizada correctamente.");
+                                builder2.setCancelable(false);
+
+                                builder2.setPositiveButton(
+                                        "OK",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int id) {
+                                                dialog.cancel();
+                                            }
+                                        });
+                                AlertDialog alert12 = builder2.create();
+                                alert12.show();
+
+                            }
+                        });
+
+
+
+                builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
             }
         });
+
     }
 
 
@@ -100,6 +147,8 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
         });
         queue.add(jsonObjectRequest);
     }
+
+
 
     @Override
     public void onClick(View view) {
