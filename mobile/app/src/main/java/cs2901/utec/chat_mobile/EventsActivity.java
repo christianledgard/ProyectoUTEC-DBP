@@ -24,7 +24,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MessageActivity extends AppCompatActivity {
+public class EventsActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     RecyclerView.Adapter mAdapter;

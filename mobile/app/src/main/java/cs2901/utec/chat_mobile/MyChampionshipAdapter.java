@@ -66,7 +66,7 @@ public class MyChampionshipAdapter extends RecyclerView.Adapter<MyChampionshipAd
 
                 @Override
                 public void onClick(View v) {
-                    Intent goToMessage = new Intent(context,MessageActivity.class);
+                    Intent goToMessage = new Intent(context, EventsActivity.class);
                     goToMessage.putExtra("championship_id", championship_id);
                     goToMessage.putExtra("category", category);
                     goToMessage.putExtra("description", description);
