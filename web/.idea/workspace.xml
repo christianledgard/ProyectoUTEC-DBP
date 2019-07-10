@@ -50,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="516" column="48" selection-start-line="516" selection-start-column="33" selection-end-line="516" selection-end-column="48" />
+            <state relative-caret-position="791">
+              <caret line="533" column="37" lean-forward="true" selection-start-line="533" selection-start-column="37" selection-end-line="533" selection-end-column="37" />
               <folding>
                 <element signature="e#0#86#0" expanded="true" />
               </folding>
@@ -116,6 +116,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -180,12 +181,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562760936415</updated>
-      <workItem from="1562760940016" duration="975000" />
+      <workItem from="1562760940016" duration="1478000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="975000" />
+    <option name="totallyTimeSpent" value="1478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1100" y="-1417" width="1720" height="1417" extended-state="0" />
@@ -233,8 +234,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="516" column="48" selection-start-line="516" selection-start-column="33" selection-end-line="516" selection-end-column="48" />
+        <state relative-caret-position="791">
+          <caret line="533" column="37" lean-forward="true" selection-start-line="533" selection-start-column="37" selection-end-line="533" selection-end-column="37" />
           <folding>
             <element signature="e#0#86#0" expanded="true" />
           </folding>

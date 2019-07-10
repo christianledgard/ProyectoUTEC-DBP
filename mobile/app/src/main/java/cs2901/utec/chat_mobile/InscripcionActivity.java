@@ -1,7 +1,5 @@
 package cs2901.utec.chat_mobile;
 
-import android.app.Activity;
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -26,22 +23,14 @@ import java.util.Map;
 
 public class InscripcionActivity extends AppCompatActivity implements View.OnClickListener{
 
-    public Activity getActivity(){
-        return this;
-    }
-
-    private Context mContext;
     Spinner tipo_de_vela_spinner;
     EditText numeroDeVela;
     Button realizarInscripcion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscripcion);
-
-
 
         tipo_de_vela_spinner = (Spinner)findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.tipo_de_vela, android.R.layout.simple_spinner_item);
@@ -55,7 +44,6 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
                 postMessage();
             }
         });
-
     }
 
 
@@ -67,7 +55,6 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
         //EditText txtPassword = (EditText) findViewById(R.id.spinner);
         String vela = txtVela.getText().toString();
         //String password = txtPassword.getText().toString();
-
 
 
         String url = "http://10.0.2.2:8080/mobile/loadSailData";
@@ -83,8 +70,8 @@ public class InscripcionActivity extends AppCompatActivity implements View.OnCli
         //final String sailingNumber = numeroDeVela.toString();
         //final String category = tipo_de_vela_spinner.toString();
         //final String championship_id = getIntent().getExtras().get("championship_id").toString();
-        //final String user_id  = "8";
-        //final String championship_id = "4";
+        final String user_id  = "8";
+        final String championship_id = "4";
 
         params.put("sailingNumber", vela);
         params.put("category", category);
