@@ -57,7 +57,6 @@ public class MyChampionshipAdapter extends RecyclerView.Adapter<MyChampionshipAd
             final String description = element.getString("description");
             final String endDate = element.getString("endDate");
             final String location = element.getString("location");
-            final String maxCompetitors = element.getString("maxCompetitors");
             final String price = element.getString("price");
             final String startDate = element.getString("startDate");
             holder.first_line.setText(title);
@@ -73,7 +72,6 @@ public class MyChampionshipAdapter extends RecyclerView.Adapter<MyChampionshipAd
                     goToMessage.putExtra("description", description);
                     goToMessage.putExtra("endDate", endDate);
                     goToMessage.putExtra("location", location);
-                    goToMessage.putExtra("maxCompetitors", maxCompetitors);
                     goToMessage.putExtra("price", price);
                     goToMessage.putExtra("startDate", startDate);
                     goToMessage.putExtra("title", title);

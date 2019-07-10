@@ -4,33 +4,40 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/fondo"
     android:padding="1dp"
     >
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left">
-        <TextView
-            android:id="@+id/element_view_friend_line"
-            android:layout_width="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/container"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#012"
-            android:background="@drawable/message"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right">
-        <TextView
-            android:id="@+id/element_view_me_line"
-            android:layout_width="wrap_content"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/element_view_friend_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#012"
+                android:background="@drawable/message"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#012"
-            android:background="@drawable/message_from_contact"
-            />
+            android:gravity="right">
+            <TextView
+                android:id="@+id/element_view_me_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#012"
+                android:background="@drawable/message_from_contact"
+                />
+        </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>

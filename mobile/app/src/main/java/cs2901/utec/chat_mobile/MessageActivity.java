@@ -43,7 +43,6 @@ public class MessageActivity extends AppCompatActivity {
         String description = getIntent().getExtras().get("description").toString();
         String endDate = getIntent().getExtras().get("endDate").toString();
         String location = getIntent().getExtras().get("location").toString();
-        String maxCompetitors = getIntent().getExtras().get("maxCompetitors").toString();
         String price = getIntent().getExtras().get("price").toString();
         String startDate = getIntent().getExtras().get("startDate").toString();
         setTitle(title);
@@ -56,7 +55,6 @@ public class MessageActivity extends AppCompatActivity {
         final TextView textViewEndDate = (TextView)findViewById(R.id.endDate);
         final TextView textViewStartDate = (TextView)findViewById(R.id.startDate);
         final TextView textViewLocation = (TextView)findViewById(R.id.location);
-        final TextView textViewMaxCompetitors = (TextView)findViewById(R.id.maxCompetitors);
         final TextView textViewPrice = (TextView)findViewById(R.id.price);
 
 
@@ -66,7 +64,6 @@ public class MessageActivity extends AppCompatActivity {
         textViewEndDate.setText(endDate);
         textViewStartDate.setText(startDate);
         textViewLocation.setText(location);
-        textViewMaxCompetitors.setText(maxCompetitors);
         textViewPrice.setText(price);
 
 

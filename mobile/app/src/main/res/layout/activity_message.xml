@@ -10,12 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="20dp">
-        <!--android:background="@drawable/fondo"-->
+        android:gravity="center"
+        android:background="@drawable/fondo">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/container"
+            android:gravity="center"
+            android:layout_margin="40dp"
+            android:padding="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -30,6 +34,7 @@
                 android:text="TextView" />
             <TextView
                 android:id="@+id/description"
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
@@ -45,28 +50,30 @@
                 android:text="TextView" />
             <TextView
                 android:id="@+id/location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-            <TextView
-                android:id="@+id/maxCompetitors"
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
             <TextView
                 android:id="@+id/price"
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center">
+                android:gravity="center"
+                >
                 <Button
+                    android:padding="10dp"
+                    android:layout_margin="14dp"
                     android:id="@+id/btnInscription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Inscríbete aquí"
+                    android:textColor="#FFF"
+                    android:background="@drawable/button"
                     android:onClick="onBtnInscription"
                     />
             </LinearLayout>
