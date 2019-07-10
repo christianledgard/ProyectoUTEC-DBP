@@ -1,6 +1,7 @@
 package cs2901.utec.chat_mobile;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -73,7 +74,8 @@ public class MessageActivity extends AppCompatActivity {
 
 
     public void onBtnInscription(View v) {
-        //postMessage();
+        Intent intent = new Intent(this, InscripcionActivity.class);
+        startActivity(intent);
     }
 
 

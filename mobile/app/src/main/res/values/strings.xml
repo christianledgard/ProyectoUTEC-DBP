@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CS2B01 - CHAT</string>
+    
+    <string-array name="tipo_de_vela">
+        <item>4.7</item>
+        <item>Radial</item>
+        <item>Standard</item>
+    </string-array>
 </resources>

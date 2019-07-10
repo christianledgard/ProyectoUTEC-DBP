@@ -52,7 +52,7 @@ public class MyMessageAdapter extends RecyclerView.Adapter<MyMessageAdapter.View
     public void onBindViewHolder(@NonNull MyMessageAdapter.ViewHolder holder, int position) {
         try{
             JSONObject element = elements.getJSONObject(position);
-            String mFirstLine = element.getString("content");
+            /*String mFirstLine = element.getString("content");
             int userFromId = element.getInt("user_from_id");
 
             if(userFromId == this.userFromId){
@@ -61,7 +61,8 @@ public class MyMessageAdapter extends RecyclerView.Adapter<MyMessageAdapter.View
             }else{
                 holder.myLine.setVisibility(View.INVISIBLE);
                 holder.friendLine.setText(mFirstLine);
-            }
+            }*/
+
 
         }catch (JSONException e){
             e.printStackTrace();
